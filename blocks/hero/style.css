@@ -1,0 +1,109 @@
+/* Hero block. */
+
+.stature-hero {
+	position: relative;
+	overflow: hidden;
+	background: var(--white);
+}
+
+.stature-hero__motif {
+	position: absolute;
+	right: -11.25rem;
+	top: -7.5rem;
+	width: 35rem;
+	max-width: none;
+	opacity: 0.35;
+	pointer-events: none;
+}
+
+.stature-hero__inner {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	max-width: var(--container-outer);
+	margin: 0 auto;
+	padding: 5.625rem var(--container-pad-x) 0;
+	text-align: center;
+}
+
+.stature-hero__heading {
+	margin: 0;
+	width: 100%;
+	font-size: var(--text-display);
+	font-weight: var(--w-regular);
+	line-height: var(--leading-display);
+	letter-spacing: var(--tracking-display);
+	color: var(--navy);
+}
+
+.stature-hero__lead {
+	margin: var(--sp-6) auto var(--sp-7);
+	max-width: 35rem;
+	font-size: var(--text-lead);
+	font-weight: var(--w-light);
+	line-height: 1.5;
+	color: var(--navy-60);
+}
+
+.stature-hero__actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--sp-4);
+	justify-content: center;
+}
+
+.stature-hero__panel {
+	position: relative;
+	width: 100%;
+	max-width: 61.25rem;
+	margin: var(--sp-8) 0 var(--sp-9);
+	border-radius: var(--radius-lg);
+	overflow: hidden;
+	box-shadow: var(--shadow-raised);
+	aspect-ratio: 980 / 460;
+}
+
+.stature-hero__image {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.stature-hero__image--placeholder {
+	background: var(--grad-navy);
+}
+
+.stature-hero__scrim {
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(
+		180deg,
+		color-mix(in srgb, var(--navy) 10%, transparent),
+		color-mix(in srgb, var(--navy) 55%, transparent)
+	);
+}
+
+.stature-hero__caption {
+	position: absolute;
+	left: 1.75rem;
+	bottom: 1.5rem;
+	display: flex;
+	align-items: center;
+	gap: 0.875rem;
+}
+
+.stature-hero__symbol {
+	height: 1.625rem;
+	width: auto;
+}
+
+.stature-hero__caption span {
+	font-size: var(--text-eyebrow);
+	letter-spacing: var(--tracking-eyebrow);
+	text-transform: uppercase;
+	color: var(--white);
+	text-align: left;
+}

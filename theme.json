@@ -1,0 +1,337 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 3,
+  "settings": {
+    "appearanceTools": false,
+    "useRootPaddingAwareAlignments": true,
+    "layout": {
+      "contentSize": "75rem",
+      "wideSize": "75rem"
+    },
+    "color": {
+      "custom": false,
+      "customDuotone": false,
+      "customGradient": false,
+      "defaultDuotone": false,
+      "defaultGradients": false,
+      "defaultPalette": false,
+      "palette": [
+        {
+          "slug": "navy",
+          "name": "Navy",
+          "color": "#0e212a"
+        },
+        {
+          "slug": "cyan",
+          "name": "Cyan",
+          "color": "#c4ecfa"
+        },
+        {
+          "slug": "cool-grey",
+          "name": "Cool grey",
+          "color": "#eff3f4"
+        },
+        {
+          "slug": "white",
+          "name": "White",
+          "color": "#ffffff"
+        }
+      ]
+    },
+    "typography": {
+      "customFontSize": false,
+      "defaultFontSizes": false,
+      "dropCap": false,
+      "fluid": false,
+      "fontFamilies": [
+        {
+          "slug": "stolzl",
+          "name": "Stolzl",
+          "fontFamily": "'Stolzl', 'Helvetica Neue', Arial, sans-serif",
+          "fontFace": [
+            {
+              "fontFamily": "Stolzl",
+              "fontWeight": "200",
+              "fontStyle": "normal",
+              "fontDisplay": "swap",
+              "src": [
+                "file:./assets/fonts/Stolzl-Thin.otf"
+              ]
+            },
+            {
+              "fontFamily": "Stolzl",
+              "fontWeight": "300",
+              "fontStyle": "normal",
+              "fontDisplay": "swap",
+              "src": [
+                "file:./assets/fonts/Stolzl-Light.otf"
+              ]
+            },
+            {
+              "fontFamily": "Stolzl",
+              "fontWeight": "400",
+              "fontStyle": "normal",
+              "fontDisplay": "swap",
+              "src": [
+                "file:./assets/fonts/Stolzl-Book.otf"
+              ]
+            },
+            {
+              "fontFamily": "Stolzl",
+              "fontWeight": "500",
+              "fontStyle": "normal",
+              "fontDisplay": "swap",
+              "src": [
+                "file:./assets/fonts/Stolzl-Regular.otf"
+              ]
+            },
+            {
+              "fontFamily": "Stolzl",
+              "fontWeight": "600",
+              "fontStyle": "normal",
+              "fontDisplay": "swap",
+              "src": [
+                "file:./assets/fonts/Stolzl-Medium.otf"
+              ]
+            },
+            {
+              "fontFamily": "Stolzl",
+              "fontWeight": "700",
+              "fontStyle": "normal",
+              "fontDisplay": "swap",
+              "src": [
+                "file:./assets/fonts/Stolzl-Bold.otf"
+              ]
+            }
+          ]
+        }
+      ],
+      "fontSizes": [
+        {
+          "slug": "display",
+          "name": "Display",
+          "size": "clamp(2.5rem, 1.99153rem + 2.54237vw, 4rem)"
+        },
+        {
+          "slug": "h1",
+          "name": "Heading 1",
+          "size": "clamp(2.125rem, 1.78602rem + 1.69492vw, 3.125rem)"
+        },
+        {
+          "slug": "h2",
+          "name": "Heading 2",
+          "size": "clamp(1.8125rem, 1.53708rem + 1.37712vw, 2.625rem)"
+        },
+        {
+          "slug": "h3",
+          "name": "Heading 3",
+          "size": "clamp(1.5rem, 1.28814rem + 1.05932vw, 2.125rem)"
+        },
+        {
+          "slug": "h4",
+          "name": "Heading 4",
+          "size": "clamp(1.25rem, 1.10169rem + 0.741525vw, 1.6875rem)"
+        },
+        {
+          "slug": "lead",
+          "name": "Lead",
+          "size": "clamp(1.125rem, 1.04025rem + 0.423729vw, 1.375rem)"
+        },
+        {
+          "slug": "base",
+          "name": "Body",
+          "size": "clamp(1rem, 0.978814rem + 0.105932vw, 1.0625rem)"
+        },
+        {
+          "slug": "small",
+          "name": "Small",
+          "size": "clamp(0.8125rem, 0.791314rem + 0.105932vw, 0.875rem)"
+        },
+        {
+          "slug": "eyebrow",
+          "name": "Eyebrow",
+          "size": "clamp(0.75rem, 0.728814rem + 0.105932vw, 0.8125rem)"
+        }
+      ]
+    },
+    "spacing": {
+      "customSpacingSize": false,
+      "defaultSpacingSizes": false,
+      "units": [
+        "px",
+        "rem",
+        "%",
+        "vw",
+        "vh"
+      ],
+      "spacingSizes": [
+        {
+          "slug": "1",
+          "name": "4",
+          "size": "0.25rem"
+        },
+        {
+          "slug": "2",
+          "name": "8",
+          "size": "0.5rem"
+        },
+        {
+          "slug": "3",
+          "name": "12",
+          "size": "0.75rem"
+        },
+        {
+          "slug": "4",
+          "name": "16",
+          "size": "1rem"
+        },
+        {
+          "slug": "5",
+          "name": "24",
+          "size": "clamp(1.25rem, 1.16525rem + 0.423729vw, 1.5rem)"
+        },
+        {
+          "slug": "6",
+          "name": "32",
+          "size": "clamp(1.5rem, 1.33051rem + 0.847458vw, 2rem)"
+        },
+        {
+          "slug": "7",
+          "name": "48",
+          "size": "clamp(2rem, 1.66102rem + 1.69492vw, 3rem)"
+        },
+        {
+          "slug": "8",
+          "name": "64",
+          "size": "clamp(2.5rem, 1.99153rem + 2.54237vw, 4rem)"
+        },
+        {
+          "slug": "9",
+          "name": "96",
+          "size": "clamp(3.5rem, 2.65254rem + 4.23729vw, 6rem)"
+        },
+        {
+          "slug": "10",
+          "name": "128",
+          "size": "clamp(4.5rem, 3.31356rem + 5.9322vw, 8rem)"
+        }
+      ]
+    },
+    "border": {
+      "customColor": false,
+      "customRadius": false,
+      "customStyle": false,
+      "customWidth": false
+    },
+    "shadow": {
+      "defaultPresets": false,
+      "presets": [
+        {
+          "slug": "card",
+          "name": "Card",
+          "shadow": "0 0.0625rem 0.125rem rgba(14, 33, 42, 0.05), 0 0.5rem 1.5rem rgba(14, 33, 42, 0.06)"
+        },
+        {
+          "slug": "raised",
+          "name": "Raised",
+          "shadow": "0 0.75rem 2.5rem rgba(14, 33, 42, 0.14)"
+        }
+      ]
+    },
+    "custom": {
+      "navy800": "#16303c",
+      "navy700": "#1e3d4b",
+      "navy60": "rgba(14, 33, 42, 0.6)",
+      "navy40": "rgba(14, 33, 42, 0.4)",
+      "navy12": "rgba(14, 33, 42, 0.12)",
+      "navy08": "rgba(14, 33, 42, 0.08)",
+      "cyan60": "rgba(196, 236, 250, 0.6)",
+      "white70": "rgba(255, 255, 255, 0.7)",
+      "white16": "rgba(255, 255, 255, 0.16)",
+      "white08": "rgba(255, 255, 255, 0.08)",
+      "gradNavy": "linear-gradient(160deg, #4d6b78 0%, #22414f 55%, #0e212a 100%)",
+      "weight": {
+        "thin": "200",
+        "light": "300",
+        "book": "400",
+        "regular": "500",
+        "medium": "600",
+        "bold": "700"
+      },
+      "leading": {
+        "display": "1.1",
+        "heading": "1.2",
+        "body": "1.6"
+      },
+      "tracking": {
+        "display": "-0.01em",
+        "eyebrow": "0.14em"
+      },
+      "radius": {
+        "sm": "0.25rem",
+        "md": "0.5rem",
+        "lg": "1rem",
+        "pill": "62.4375rem"
+      },
+      "border": {
+        "width": "0.0625rem"
+      },
+      "container": {
+        "max": "75rem",
+        "padX": "clamp(1.5rem, 1.33051rem + 0.847458vw, 2rem)",
+        "outer": "calc(var(--wp--custom--container--max) + var(--wp--custom--container--pad-x) * 2)"
+      },
+      "section": {
+        "padY": "clamp(3.5rem, 2.65254rem + 4.23729vw, 6rem)"
+      },
+      "breakpoint": {
+        "tablet": "48.875em",
+        "desktop": "64em"
+      },
+      "texture": {
+        "grain": "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='420' height='420'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E\")",
+        "grainSize": "26.25rem",
+        "grainOpacity": "0.3"
+      },
+      "motion": {
+        "easeOut": "cubic-bezier(0.22, 1, 0.36, 1)",
+        "durFast": "150ms",
+        "durMed": "300ms"
+      }
+    }
+  },
+  "styles": {
+    "color": {
+      "background": "var(--wp--preset--color--white)",
+      "text": "var(--wp--custom--navy-60)"
+    },
+    "typography": {
+      "fontFamily": "var(--wp--preset--font-family--stolzl)",
+      "fontSize": "var(--wp--preset--font-size--base)",
+      "fontWeight": "var(--wp--custom--weight--book)",
+      "lineHeight": "var(--wp--custom--leading--body)"
+    },
+    "elements": {
+      "heading": {
+        "color": {
+          "text": "var(--wp--preset--color--navy)"
+        },
+        "typography": {
+          "fontWeight": "var(--wp--custom--weight--regular)",
+          "lineHeight": "var(--wp--custom--leading--heading)",
+          "letterSpacing": "var(--wp--custom--tracking--display)"
+        }
+      },
+      "link": {
+        "color": {
+          "text": "var(--wp--preset--color--navy)"
+        },
+        ":hover": {
+          "typography": {
+            "textDecoration": "none"
+          }
+        }
+      }
+    }
+  }
+}

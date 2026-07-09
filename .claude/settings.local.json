@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//Users/alexwalton/Local Sites/stature/app/public/**)",
+      "Bash(grep \"wp_version =\" wp-includes/version.php)"
+    ]
+  }
+}

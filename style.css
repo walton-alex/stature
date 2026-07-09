@@ -1,0 +1,16 @@
+/*
+Theme Name: Stature
+Theme URI: https://stature.agency
+Author: Alex Walton
+Author URI: https://stature.agency
+Description: Marketing website for Stature — websites for specialist recruitment agencies. Classic PHP theme built on ACF Pro blocks.
+Version: 0.1.0
+Requires at least: 6.5
+Tested up to: 7.0
+Requires PHP: 8.0
+License: GPL-2.0-or-later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: stature
+*/
+
+/* Stylesheets are enqueued from functions.php — see assets/css/ and tokens/. */

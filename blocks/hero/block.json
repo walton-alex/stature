@@ -1,0 +1,22 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "stature/hero",
+  "title": "Hero",
+  "category": "stature",
+  "icon": "align-center",
+  "description": "Centred hero: heading, lead, two buttons, and an optional rounded feature image panel.",
+  "keywords": ["hero", "banner", "intro", "masthead"],
+  "textdomain": "stature",
+  "supports": {
+    "align": false,
+    "anchor": true,
+    "html": false,
+    "customClassName": true
+  },
+  "acf": {
+    "blockVersion": 3,
+    "renderTemplate": "render.php"
+  },
+  "style": "file:./style.css"
+}

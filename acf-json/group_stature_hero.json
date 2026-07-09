@@ -1,0 +1,170 @@
+{
+    "key": "group_stature_hero",
+    "title": "Block: Hero",
+    "fields": [
+        {
+            "key": "field_stature_hero_heading",
+            "label": "Heading",
+            "name": "heading",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "75",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Helping specialist recruitment agencies win more clients",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_stature_hero_heading_level",
+            "label": "Heading level",
+            "name": "heading_level",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "Use H1 for the first hero on a page. Use H2 anywhere else — a page must have only one H1.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "h1": "H1",
+                "h2": "H2"
+            },
+            "default_value": "h1",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
+            "ajax": 0
+        },
+        {
+            "key": "field_stature_hero_lead",
+            "label": "Lead paragraph",
+            "name": "lead",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Renders at 560px max width beneath the heading.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "We build websites that clearly communicate what you do, who you do it for, and why clients trust you to deliver.",
+            "maxlength": "",
+            "rows": 3,
+            "placeholder": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_stature_hero_primary_cta",
+            "label": "Primary button",
+            "name": "primary_cta",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "Leave empty to use the approved default: Start a Project.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
+        },
+        {
+            "key": "field_stature_hero_secondary_cta",
+            "label": "Secondary button",
+            "name": "secondary_cta",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "Leave empty to use the approved default: View Our Work.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
+        },
+        {
+            "key": "field_stature_hero_image",
+            "label": "Feature image",
+            "name": "image",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "Project screenshot. Falls back to the placeholder photography from the design bundle until one is supplied.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "library": "all",
+            "preview_size": "medium",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_stature_hero_caption",
+            "label": "Image caption",
+            "name": "caption",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Uppercased in the design. Clear the field to hide the caption entirely.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Project screenshot to follow",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "stature\/hero"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Fields for the Home hero block.",
+    "show_in_rest": 0,
+    "display_title": "",
+    "allow_ai_access": false,
+    "ai_description": "",
+    "modified": 1783604686
+}

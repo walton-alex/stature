@@ -1,0 +1,219 @@
+/* Base layer: reset, layout primitives, and the shared Button and Eyebrow components. */
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	background: var(--surface-page);
+	-webkit-font-smoothing: antialiased;
+}
+
+img,
+svg {
+	max-width: 100%;
+}
+
+a {
+	text-decoration: none;
+	transition: opacity var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out);
+}
+
+a:hover {
+	opacity: 0.7;
+}
+
+button {
+	font: inherit;
+}
+
+.screen-reader-text {
+	position: absolute;
+	width: 0.0625rem;
+	height: 0.0625rem;
+	margin: -0.0625rem;
+	padding: 0;
+	overflow: hidden;
+	clip-path: inset(50%);
+	white-space: nowrap;
+	border: 0;
+}
+
+.stature-skip-link:focus {
+	position: fixed;
+	top: var(--sp-4);
+	left: var(--sp-4);
+	z-index: 100;
+	padding: var(--sp-3) var(--sp-4);
+	background: var(--white);
+	color: var(--navy);
+	border-radius: var(--radius-sm);
+	box-shadow: var(--shadow-card);
+}
+
+.stature-container {
+	max-width: var(--container-outer);
+	margin: 0 auto;
+	padding: 0 var(--container-pad-x);
+}
+
+.stature-section {
+	padding: var(--section-pad-y) 0;
+}
+
+.stature-section--white {
+	background: var(--white);
+}
+
+.stature-section--grey {
+	background: var(--cool-grey);
+}
+
+.stature-section--navy {
+	background: var(--navy);
+}
+
+.stature-grain {
+	position: absolute;
+	inset: 0;
+	background-image: var(--grain);
+	background-size: var(--grain-size);
+	mix-blend-mode: soft-light;
+	opacity: var(--grain-opacity);
+	pointer-events: none;
+}
+
+.stature-eyebrow {
+	display: flex;
+	align-items: center;
+	gap: 0.625rem;
+	font-family: var(--font-sans);
+	font-size: var(--text-eyebrow);
+	font-weight: var(--w-regular);
+	letter-spacing: var(--tracking-eyebrow);
+	text-transform: uppercase;
+	color: var(--navy-60);
+	margin-bottom: var(--sp-4);
+}
+
+.stature-eyebrow::before {
+	content: "";
+	flex-shrink: 0;
+	width: 0.875rem;
+	height: 0.5rem;
+	background: var(--navy);
+	transform: skewX(-15deg);
+}
+
+.stature-eyebrow.is-on-navy {
+	color: var(--cyan);
+}
+
+.stature-eyebrow.is-on-navy::before {
+	background: var(--cyan);
+}
+
+.stature-btn {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.625rem;
+	border: var(--border-w) solid transparent;
+	border-radius: var(--radius-pill);
+	font-family: var(--font-sans);
+	font-weight: var(--w-regular);
+	line-height: 1;
+	text-decoration: none;
+	cursor: pointer;
+	transition:
+		background var(--dur-fast) var(--ease-out),
+		color var(--dur-fast) var(--ease-out),
+		transform var(--dur-fast) var(--ease-out);
+}
+
+.stature-btn:active {
+	transform: scale(0.98);
+}
+
+.stature-btn:hover {
+	opacity: 1;
+}
+
+.stature-btn__arrow {
+	font-size: 1.1em;
+	line-height: 1;
+}
+
+.stature-btn--sm {
+	padding: 0.5rem 1.125rem;
+	font-size: 0.875rem;
+}
+
+.stature-btn--md {
+	padding: 0.75rem 1.625rem;
+	font-size: 0.9375rem;
+}
+
+.stature-btn--lg {
+	padding: 1rem 2rem;
+	font-size: 1.0625rem;
+}
+
+.stature-btn--primary {
+	background: var(--btn-primary-bg);
+	color: var(--btn-primary-fg);
+}
+
+.stature-btn--primary:hover {
+	background: var(--btn-primary-bg-hover);
+	color: var(--btn-primary-fg);
+}
+
+.stature-btn--primary.is-on-navy {
+	background: var(--btn-on-navy-bg);
+	color: var(--btn-on-navy-fg);
+}
+
+.stature-btn--primary.is-on-navy:hover {
+	background: var(--white);
+	color: var(--btn-on-navy-fg);
+}
+
+.stature-btn--secondary {
+	background: transparent;
+	color: var(--navy);
+	border-color: var(--navy-12);
+}
+
+.stature-btn--secondary:hover {
+	background: var(--navy-08);
+	color: var(--navy);
+}
+
+.stature-btn--secondary.is-on-navy {
+	color: var(--white);
+	border-color: var(--on-navy-border);
+}
+
+.stature-btn--secondary.is-on-navy:hover {
+	background: var(--white-08);
+	color: var(--white);
+}
+
+.stature-btn--ghost {
+	background: transparent;
+	color: var(--navy);
+}
+
+.stature-btn--ghost:hover {
+	background: transparent;
+	color: var(--navy-700);
+}
+
+.stature-btn--ghost.is-on-navy {
+	color: var(--cyan);
+}
+
+.stature-btn--ghost.is-on-navy:hover {
+	color: var(--white);
+}
