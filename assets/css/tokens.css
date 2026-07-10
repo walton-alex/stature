@@ -9,6 +9,7 @@
 
   --navy-800: var(--wp--custom--navy-800);
   --navy-700: var(--wp--custom--navy-700);
+  --navy-80: var(--wp--custom--navy-80);
   --navy-60: var(--wp--custom--navy-60);
   --navy-40: var(--wp--custom--navy-40);
   --navy-12: var(--wp--custom--navy-12);
@@ -25,7 +26,7 @@
   --surface-card: var(--white);
   --surface-inverse: var(--navy);
   --text-heading: var(--navy);
-  --text-body: var(--navy-60);
+  --text-body: var(--navy-80);
   --text-muted: var(--navy-40);
   --border-default: var(--navy-12);
   --accent: var(--cyan);
@@ -82,7 +83,11 @@
   --container-max: var(--wp--custom--container--max);
   --container-pad-x: var(--wp--custom--container--pad-x);
   --container-outer: var(--wp--custom--container--outer);
+  --header-row-mobile: var(--wp--custom--header--row-mobile);
+  --header-row-desktop: var(--wp--custom--header--row-desktop);
+  --header-z: var(--wp--custom--header--z);
   --section-pad-y: var(--wp--custom--section--pad-y);
+  --hero-pad-top: var(--wp--custom--hero--pad-top);
 
   --radius-sm: var(--wp--custom--radius--sm);
   --radius-md: var(--wp--custom--radius--md);

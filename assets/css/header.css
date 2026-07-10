@@ -1,7 +1,9 @@
 /* Site header. Mobile first; tablet 48.875em, desktop 64em. Mobile nav requires JS. */
 
 .stature-header-bar {
-  position: relative;
+  position: sticky;
+  top: var(--admin-bar-h);
+  z-index: var(--header-z);
   background: var(--white);
   border-bottom: var(--border-w) solid var(--navy-08);
 }
@@ -70,7 +72,7 @@
  */
 .stature-header__nav {
   position: fixed;
-  top: var(--wp-admin--admin-bar--height, 0);
+  top: var(--admin-bar-h);
   right: 0;
   bottom: 0;
   left: 0;
@@ -330,7 +332,7 @@
     font-size: 0.9375rem;
     font-weight: var(--w-book);
     line-height: var(--leading-body);
-    color: var(--navy-60);
+    color: var(--navy-700);
   }
 
   .stature-header__link:hover {

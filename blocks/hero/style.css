@@ -23,7 +23,7 @@
 	align-items: center;
 	max-width: var(--container-outer);
 	margin: 0 auto;
-	padding: 5.625rem var(--container-pad-x) 0;
+	padding: var(--hero-pad-top) var(--container-pad-x) 0;
 	text-align: center;
 }
 
@@ -39,11 +39,10 @@
 
 .stature-hero__lead {
 	margin: var(--sp-6) auto var(--sp-7);
-	max-width: 35rem;
+	max-width: 40rem;
 	font-size: var(--text-lead);
 	font-weight: var(--w-light);
 	line-height: 1.5;
-	color: var(--navy-60);
 }
 
 .stature-hero__actions {
