@@ -1,0 +1,87 @@
+{
+  "key": "group_stature_case_studies",
+  "title": "Block: Case study cards",
+  "fields": [
+    {
+      "key": "field_stature_case_studies_background",
+      "label": "Background",
+      "name": "background",
+      "type": "select",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "50",
+        "class": "",
+        "id": ""
+      },
+      "choices": {
+        "white": "White",
+        "grey": "Cool grey"
+      },
+      "default_value": "white",
+      "return_format": "value",
+      "multiple": 0,
+      "allow_null": 0,
+      "ui": 0,
+      "ajax": 0
+    },
+    {
+      "key": "field_stature_case_studies_feature_first",
+      "label": "Feature the first card",
+      "name": "feature_first",
+      "type": "true_false",
+      "instructions": "Renders the first case study full width at 1152:540.",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "50",
+        "class": "",
+        "id": ""
+      },
+      "message": "",
+      "default_value": 1,
+      "ui": 1
+    },
+    {
+      "key": "field_stature_case_studies_count",
+      "label": "How many",
+      "name": "count",
+      "type": "number",
+      "instructions": "0 shows every published case study.",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": 0,
+      "min": 0,
+      "max": "",
+      "step": 1,
+      "placeholder": "",
+      "prepend": "",
+      "append": ""
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "block",
+        "operator": "==",
+        "value": "stature/case-studies"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": true,
+  "description": "Fields for the Case study cards block.",
+  "show_in_rest": 0,
+  "modified": 1783604396
+}

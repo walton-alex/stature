@@ -1,0 +1,75 @@
+/* Case study detail template. */
+
+.stature-case-study__feature {
+	padding-bottom: 0;
+}
+
+.stature-case-study__image-panel {
+	position: relative;
+	aspect-ratio: 1152 / 520;
+	border-radius: var(--radius-lg);
+	overflow: hidden;
+	box-shadow: var(--shadow-raised);
+}
+
+.stature-case-study__image--placeholder {
+	background: var(--grad-navy);
+}
+
+.stature-case-study__scrim {
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(
+		180deg,
+		color-mix(in srgb, var(--navy) 5%, transparent),
+		color-mix(in srgb, var(--navy) 45%, transparent)
+	);
+}
+
+.stature-case-study__caption {
+	position: absolute;
+	left: 1.75rem;
+	bottom: 1.5rem;
+	color: var(--white);
+}
+
+.stature-case-study__narrative {
+	display: grid;
+	gap: var(--sp-8);
+}
+
+.stature-case-study__row {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: var(--sp-5);
+	padding-top: var(--sp-6);
+	border-top: var(--border-w) solid var(--navy-12);
+}
+
+.stature-case-study__row .stature-eyebrow {
+	margin-bottom: 0;
+}
+
+.stature-case-study__body {
+	margin: 0;
+	max-width: 40rem;
+	font-size: var(--text-lead);
+	font-weight: var(--w-light);
+	line-height: 1.55;
+}
+
+.stature-case-study__testimonial {
+	max-width: calc(47.5rem + var(--sp-7) * 2 + var(--border-w) * 2);
+}
+
+.stature-case-study__next-section {
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+@media (min-width: 48.875em) {
+	.stature-case-study__row {
+		grid-template-columns: 16.25rem 1fr;
+		gap: var(--sp-8);
+	}
+}

@@ -1,0 +1,14 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "stature/cross-link",
+	"title": "Cross-link row",
+	"category": "stature",
+	"icon": "arrow-right-alt",
+	"description": "A hairline row: small label on the left, a large link on the right.",
+	"keywords": [ "link", "row", "cross link", "next" ],
+	"textdomain": "stature",
+	"supports": { "align": false, "anchor": true, "html": false, "customClassName": true },
+	"acf": { "blockVersion": 3, "renderTemplate": "render.php" },
+	"style": "file:./style.css"
+}

@@ -1,44 +1,26 @@
 {
-  "key": "group_stature_inner_hero",
-  "title": "Block: Inner hero",
+  "key": "group_stature_testimonial",
+  "title": "Block: Testimonial",
   "fields": [
     {
-      "key": "field_stature_inner_hero_eyebrow",
-      "label": "Eyebrow",
-      "name": "eyebrow",
-      "type": "text",
-      "instructions": "",
-      "required": 0,
-      "conditional_logic": 0,
-      "wrapper": {
-        "width": "50",
-        "class": "",
-        "id": ""
-      },
-      "default_value": "",
-      "maxlength": "",
-      "placeholder": "",
-      "prepend": "",
-      "append": ""
-    },
-    {
-      "key": "field_stature_inner_hero_heading_width",
-      "label": "Heading width",
-      "name": "heading_width",
+      "key": "field_stature_testimonial_background",
+      "label": "Background",
+      "name": "background",
       "type": "select",
       "instructions": "",
       "required": 0,
       "conditional_logic": 0,
       "wrapper": {
-        "width": "50",
+        "width": "100",
         "class": "",
         "id": ""
       },
       "choices": {
-        "760": "Default (760px)",
-        "narrow": "Narrow (720px)"
+        "grey": "Cool grey",
+        "white": "White",
+        "navy": "Navy"
       },
-      "default_value": "760",
+      "default_value": "grey",
       "return_format": "value",
       "multiple": 0,
       "allow_null": 0,
@@ -46,31 +28,12 @@
       "ajax": 0
     },
     {
-      "key": "field_stature_inner_hero_heading",
-      "label": "Heading",
-      "name": "heading",
-      "type": "text",
-      "instructions": "",
-      "required": 1,
-      "conditional_logic": 0,
-      "wrapper": {
-        "width": "",
-        "class": "",
-        "id": ""
-      },
-      "default_value": "",
-      "maxlength": "",
-      "placeholder": "",
-      "prepend": "",
-      "append": ""
-    },
-    {
-      "key": "field_stature_inner_hero_lead",
-      "label": "Lead paragraph",
-      "name": "lead",
+      "key": "field_stature_testimonial_quote",
+      "label": "Quote",
+      "name": "quote",
       "type": "textarea",
       "instructions": "",
-      "required": 0,
+      "required": 1,
       "conditional_logic": 0,
       "wrapper": {
         "width": "",
@@ -82,6 +45,25 @@
       "rows": 3,
       "placeholder": "",
       "new_lines": ""
+    },
+    {
+      "key": "field_stature_testimonial_attribution",
+      "label": "Attribution",
+      "name": "attribution",
+      "type": "text",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "maxlength": "",
+      "placeholder": "",
+      "prepend": "",
+      "append": ""
     }
   ],
   "location": [
@@ -89,7 +71,7 @@
       {
         "param": "block",
         "operator": "==",
-        "value": "stature/inner-hero"
+        "value": "stature/testimonial"
       }
     ]
   ],
@@ -100,7 +82,7 @@
   "instruction_placement": "label",
   "hide_on_screen": "",
   "active": true,
-  "description": "Fields for the Inner hero block.",
+  "description": "Fields for the Testimonial block.",
   "show_in_rest": 0,
   "modified": 1783604396
 }

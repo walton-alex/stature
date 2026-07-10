@@ -10,6 +10,8 @@ defined( 'ABSPATH' ) || exit;
 define( 'STATURE_VERSION', '0.1.0' );
 
 require_once get_theme_file_path( 'inc/blocks.php' );
+require_once get_theme_file_path( 'inc/post-types.php' );
+require_once get_theme_file_path( 'inc/options.php' );
 require_once get_theme_file_path( 'inc/class-stature-header-walker.php' );
 require_once get_theme_file_path( 'inc/template-tags.php' );
 
@@ -65,8 +67,41 @@ function stature_enqueue_assets(): void {
 		$deps = array( $handle );
 	}
 
+	if ( is_singular( 'case_study' ) ) {
+		wp_enqueue_style(
+			'stature-case-study',
+			get_theme_file_uri( 'assets/css/case-study.css' ),
+			array( 'stature-base' ),
+			stature_asset_version( 'assets/css/case-study.css' )
+		);
+
+		// The template renders these components directly, so their block styles
+		// are never triggered by the block renderer.
+		stature_enqueue_block_styles( array( 'stature/banner', 'stature/cta-banner' ) );
+	}
 }
 add_action( 'wp_enqueue_scripts', 'stature_enqueue_assets' );
+
+/**
+ * Enqueue the stylesheets a block registers, for components rendered outside the block editor.
+ *
+ * @param array $block_names Fully qualified block names.
+ */
+function stature_enqueue_block_styles( array $block_names ): void {
+	$registry = WP_Block_Type_Registry::get_instance();
+
+	foreach ( $block_names as $name ) {
+		$type = $registry->get_registered( $name );
+
+		if ( ! $type ) {
+			continue;
+		}
+
+		foreach ( (array) $type->style_handles as $handle ) {
+			wp_enqueue_style( $handle );
+		}
+	}
+}
 
 function stature_enqueue_script_modules(): void {
 	if ( ! function_exists( 'wp_enqueue_script_module' ) ) {

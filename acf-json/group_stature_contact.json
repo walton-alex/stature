@@ -1,0 +1,189 @@
+{
+  "key": "group_stature_contact",
+  "title": "Block: Contact",
+  "fields": [
+    {
+      "key": "field_stature_contact_eyebrow",
+      "label": "Eyebrow",
+      "name": "eyebrow",
+      "type": "text",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "34",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "maxlength": "",
+      "placeholder": "",
+      "prepend": "",
+      "append": ""
+    },
+    {
+      "key": "field_stature_contact_background",
+      "label": "Background",
+      "name": "background",
+      "type": "select",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "33",
+        "class": "",
+        "id": ""
+      },
+      "choices": {
+        "grey": "Cool grey",
+        "white": "White"
+      },
+      "default_value": "grey",
+      "return_format": "value",
+      "multiple": 0,
+      "allow_null": 0,
+      "ui": 0,
+      "ajax": 0
+    },
+    {
+      "key": "field_stature_contact_heading_level",
+      "label": "Heading level",
+      "name": "heading_level",
+      "type": "select",
+      "instructions": "H1 when this block opens the page.",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "33",
+        "class": "",
+        "id": ""
+      },
+      "choices": {
+        "h1": "H1",
+        "h2": "H2"
+      },
+      "default_value": "h1",
+      "return_format": "value",
+      "multiple": 0,
+      "allow_null": 0,
+      "ui": 0,
+      "ajax": 0
+    },
+    {
+      "key": "field_stature_contact_heading",
+      "label": "Heading",
+      "name": "heading",
+      "type": "text",
+      "instructions": "",
+      "required": 1,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "maxlength": "",
+      "placeholder": "",
+      "prepend": "",
+      "append": ""
+    },
+    {
+      "key": "field_stature_contact_body",
+      "label": "Body",
+      "name": "body",
+      "type": "wysiwyg",
+      "instructions": "Paragraphs only.",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "tabs": "visual",
+      "toolbar": "basic",
+      "media_upload": 0,
+      "delay": 0
+    },
+    {
+      "key": "field_stature_contact_form_id",
+      "label": "Form",
+      "name": "form_id",
+      "type": "select",
+      "instructions": "The Gravity Form shown in the panel.",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "choices": [],
+      "default_value": "",
+      "return_format": "value",
+      "multiple": 0,
+      "allow_null": 1,
+      "ui": 0,
+      "ajax": 0
+    },
+    {
+      "key": "field_stature_contact_quote",
+      "label": "Testimonial quote",
+      "name": "quote",
+      "type": "text",
+      "instructions": "Leave empty to omit the testimonial.",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "50",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "maxlength": "",
+      "placeholder": "",
+      "prepend": "",
+      "append": ""
+    },
+    {
+      "key": "field_stature_contact_attribution",
+      "label": "Testimonial attribution",
+      "name": "attribution",
+      "type": "text",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "50",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "maxlength": "",
+      "placeholder": "",
+      "prepend": "",
+      "append": ""
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "block",
+        "operator": "==",
+        "value": "stature/contact"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": true,
+  "description": "Fields for the Contact block.",
+  "show_in_rest": 0,
+  "modified": 1783604396
+}

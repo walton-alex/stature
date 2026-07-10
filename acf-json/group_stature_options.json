@@ -1,0 +1,102 @@
+{
+  "key": "group_stature_options",
+  "title": "Stature settings",
+  "fields": [
+    {
+      "key": "field_stature_opt_cta_heading",
+      "label": "CTA heading",
+      "name": "cta_heading",
+      "type": "text",
+      "instructions": "Used by the CTA banner at the foot of every page.",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "Ready to look like the agency you are?",
+      "maxlength": "",
+      "placeholder": "",
+      "prepend": "",
+      "append": ""
+    },
+    {
+      "key": "field_stature_opt_cta_body",
+      "label": "CTA body",
+      "name": "cta_body",
+      "type": "textarea",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "maxlength": "",
+      "rows": 4,
+      "placeholder": "",
+      "new_lines": ""
+    },
+    {
+      "key": "field_stature_opt_cta_link",
+      "label": "CTA button",
+      "name": "cta_link",
+      "type": "link",
+      "instructions": "Leave empty to use the approved default: Start a Project.",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "return_format": "array"
+    },
+    {
+      "key": "field_stature_opt_cta_motif",
+      "label": "CTA background motif",
+      "name": "cta_motif",
+      "type": "image",
+      "instructions": "The gradient S outline, shown on every CTA banner.",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "return_format": "array",
+      "library": "all",
+      "preview_size": "medium",
+      "min_width": "",
+      "min_height": "",
+      "min_size": "",
+      "max_width": "",
+      "max_height": "",
+      "max_size": "",
+      "mime_types": ""
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "options_page",
+        "operator": "==",
+        "value": "stature-settings"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": true,
+  "description": "Site-wide settings.",
+  "show_in_rest": 0,
+  "modified": 1783604396
+}

@@ -11,11 +11,12 @@
 
 defined( 'ABSPATH' ) || exit;
 
-$eyebrow = (string) get_field( 'eyebrow' );
-$heading = (string) get_field( 'heading' );
-$lead    = (string) get_field( 'lead' );
-$note    = (string) get_field( 'note' );
-$bg      = (string) get_field( 'background' );
+$eyebrow   = (string) get_field( 'eyebrow' );
+$heading   = (string) get_field( 'heading' );
+$lead      = (string) get_field( 'lead' );
+$note      = (string) get_field( 'note' );
+$bg        = (string) get_field( 'background' );
+$card_size = (string) get_field( 'card_size' );
 
 $bg      = in_array( $bg, array( 'white', 'grey', 'navy' ), true ) ? $bg : 'navy';
 $on_navy = 'navy' === $bg;
@@ -27,6 +28,10 @@ $classes = stature_section_classes( $block, 'stature-services', $bg );
 
 if ( $on_navy ) {
 	$classes .= ' is-on-navy';
+}
+
+if ( 'compact' === $card_size ) {
+	$classes .= ' stature-services--compact';
 }
 
 $anchor = ! empty( $block['anchor'] ) ? $block['anchor'] : '';
@@ -63,7 +68,7 @@ $icons  = array( 'copywriting', 'web_design', 'web_development' );
 					the_row();
 
 					$icon       = (string) get_sub_field( 'icon' );
-					$icon       = in_array( $icon, $icons, true ) ? $icon : 'web_design';
+					$has_icon   = in_array( $icon, $icons, true );
 					$card_title = (string) get_sub_field( 'title' );
 					$card_body  = (string) get_sub_field( 'body' );
 					$step       = (string) get_sub_field( 'step' );
@@ -74,14 +79,16 @@ $icons  = array( 'copywriting', 'web_design', 'web_development' );
 							<span class="stature-services__step stature-label" aria-hidden="true"><?php echo esc_html( $step ); ?></span>
 						<?php endif; ?>
 
-						<img
-							class="stature-services__icon"
-							src="<?php echo esc_url( stature_asset( "icons/{$icon}_{$colourway}.svg" ) ); ?>"
-							alt=""
-							aria-hidden="true"
-							width="44"
-							height="44"
-						>
+						<?php if ( $has_icon ) : ?>
+							<img
+								class="stature-services__icon"
+								src="<?php echo esc_url( stature_asset( "icons/{$icon}_{$colourway}.svg" ) ); ?>"
+								alt=""
+								aria-hidden="true"
+								width="44"
+								height="44"
+							>
+						<?php endif; ?>
 
 						<?php if ( '' !== $card_title ) : ?>
 							<h3 class="stature-services__card-title stature-heading stature-heading--h4"><?php echo esc_html( $card_title ); ?></h3>

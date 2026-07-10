@@ -269,7 +269,8 @@
         "eyebrow": "0.14em"
       },
       "text": {
-        "nav": "0.9375rem"
+        "nav": "0.9375rem",
+        "cardTitle": "1.25rem"
       },
       "tapTarget": "2.75rem",
       "radius": {
@@ -290,8 +291,11 @@
         "padY": "clamp(3.5rem, 2.65254rem + 4.23729vw, 6rem)"
       },
       "hero": {
-        "padTop": "clamp(3.25rem, 2.44492rem + 4.02542vw, 5.625rem)",
-        "padBottomInner": "clamp(4rem, 3.02542rem + 4.87288vw, 6.875rem)"
+        "padTop": "clamp(3.25rem, 2.44492rem + 4.02542vw, 5.625rem)"
+      },
+      "banner": {
+        "padTop": "var(--wp--custom--hero--pad-top)",
+        "padBottom": "clamp(4rem, 3.02542rem + 4.87288vw, 6.875rem)"
       },
       "breakpoint": {
         "tablet": "48.875em",

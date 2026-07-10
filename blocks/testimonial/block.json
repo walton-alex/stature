@@ -1,0 +1,14 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "stature/testimonial",
+	"title": "Testimonial",
+	"category": "stature",
+	"icon": "format-quote",
+	"description": "A single testimonial card.",
+	"keywords": [ "testimonial", "quote", "trust" ],
+	"textdomain": "stature",
+	"supports": { "align": false, "anchor": true, "html": false, "customClassName": true },
+	"acf": { "blockVersion": 3, "renderTemplate": "render.php" },
+	"style": "file:./style.css"
+}

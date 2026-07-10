@@ -43,3 +43,23 @@ function stature_section_classes( array $block, string $base, string $background
 	return implode( ' ', $classes );
 }
 
+/**
+ * Offer the site's Gravity Forms as choices on the Contact block's form field.
+ *
+ * @param array $field The ACF field.
+ */
+function stature_load_gravity_forms( array $field ): array {
+	$field['choices'] = array();
+
+	if ( ! class_exists( 'GFAPI' ) ) {
+		return $field;
+	}
+
+	foreach ( GFAPI::get_forms() as $form ) {
+		$field['choices'][ (string) $form['id'] ] = $form['title'];
+	}
+
+	return $field;
+}
+add_filter( 'acf/load_field/key=field_stature_contact_form_id', 'stature_load_gravity_forms' );
+

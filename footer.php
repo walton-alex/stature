@@ -13,14 +13,14 @@ $stature_footer_columns = array(
 		'links' => array(
 			'Home'     => '',
 			'About'    => 'about',
-			'Our Work' => 'our-work',
+			'Case Studies' => 'case-studies',
 		),
 	),
 	'footer_second' => array(
 		'title' => 'Work With Us',
 		'links' => array(
 			'Project Pricing'   => 'pricing',
-			'Paid Discovery'    => 'paid-discovery',
+			'Discovery'         => 'paid-discovery',
 			'Hosting & Support' => 'hosting-support',
 			'Start a Project'   => 'start-a-project',
 		),

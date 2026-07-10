@@ -28,7 +28,7 @@
 
 .stature-team__name {
 	margin: var(--sp-5) 0 0.125rem;
-	font-size: 1.25rem;
+	font-size: var(--text-card-title);
 	font-weight: var(--w-regular);
 	color: var(--navy);
 }

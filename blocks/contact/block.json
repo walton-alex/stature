@@ -1,0 +1,14 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "stature/contact",
+	"title": "Contact",
+	"category": "stature",
+	"icon": "email",
+	"description": "Introduction and testimonial beside a panelled multi-step enquiry form.",
+	"keywords": [ "contact", "form", "enquiry" ],
+	"textdomain": "stature",
+	"supports": { "align": false, "anchor": true, "html": false, "customClassName": true },
+	"acf": { "blockVersion": 3, "renderTemplate": "render.php" },
+	"style": "file:./style.css"
+}

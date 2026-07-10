@@ -1,0 +1,371 @@
+{
+  "key": "group_stature_pricing",
+  "title": "Block: Pricing cards",
+  "fields": [
+    {
+      "key": "field_stature_pricing_eyebrow",
+      "label": "Eyebrow",
+      "name": "eyebrow",
+      "type": "text",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "50",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "maxlength": "",
+      "placeholder": "",
+      "prepend": "",
+      "append": ""
+    },
+    {
+      "key": "field_stature_pricing_background",
+      "label": "Background",
+      "name": "background",
+      "type": "select",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "50",
+        "class": "",
+        "id": ""
+      },
+      "choices": {
+        "grey": "Cool grey",
+        "white": "White"
+      },
+      "default_value": "grey",
+      "return_format": "value",
+      "multiple": 0,
+      "allow_null": 0,
+      "ui": 0,
+      "ajax": 0
+    },
+    {
+      "key": "field_stature_pricing_card_size",
+      "label": "Card size",
+      "name": "card_size",
+      "type": "select",
+      "instructions": "Compact reduces the name and price sizes, for hosting tiers.",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "50",
+        "class": "",
+        "id": ""
+      },
+      "choices": {
+        "standard": "Standard",
+        "compact": "Compact"
+      },
+      "default_value": "standard",
+      "return_format": "value",
+      "multiple": 0,
+      "allow_null": 0,
+      "ui": 0,
+      "ajax": 0
+    },
+    {
+      "key": "field_stature_pricing_heading",
+      "label": "Heading",
+      "name": "heading",
+      "type": "text",
+      "instructions": "",
+      "required": 1,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "maxlength": "",
+      "placeholder": "",
+      "prepend": "",
+      "append": ""
+    },
+    {
+      "key": "field_stature_pricing_lead",
+      "label": "Lead paragraph",
+      "name": "lead",
+      "type": "textarea",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "maxlength": "",
+      "rows": 3,
+      "placeholder": "",
+      "new_lines": ""
+    },
+    {
+      "key": "field_stature_pricing_plans",
+      "label": "Plans",
+      "name": "plans",
+      "type": "repeater",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "layout": "block",
+      "pagination": 0,
+      "min": 0,
+      "max": 0,
+      "collapsed": "field_stature_pricing_plan_name",
+      "button_label": "Add plan",
+      "rows_per_page": 20,
+      "sub_fields": [
+        {
+          "key": "field_stature_pricing_plan_name",
+          "label": "Name",
+          "name": "name",
+          "type": "text",
+          "instructions": "",
+          "required": 1,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "50",
+            "class": "",
+            "id": ""
+          },
+          "default_value": "",
+          "maxlength": "",
+          "placeholder": "",
+          "prepend": "",
+          "append": "",
+          "parent_repeater": "field_stature_pricing_plans"
+        },
+        {
+          "key": "field_stature_pricing_plan_badge",
+          "label": "Badge",
+          "name": "badge",
+          "type": "text",
+          "instructions": "Optional cyan badge, e.g. Most popular.",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "50",
+            "class": "",
+            "id": ""
+          },
+          "default_value": "",
+          "maxlength": "",
+          "placeholder": "",
+          "prepend": "",
+          "append": "",
+          "parent_repeater": "field_stature_pricing_plans"
+        },
+        {
+          "key": "field_stature_pricing_plan_prefix",
+          "label": "Price prefix",
+          "name": "price_prefix",
+          "type": "text",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "25",
+            "class": "",
+            "id": ""
+          },
+          "default_value": "from",
+          "maxlength": "",
+          "placeholder": "",
+          "prepend": "",
+          "append": "",
+          "parent_repeater": "field_stature_pricing_plans"
+        },
+        {
+          "key": "field_stature_pricing_plan_price",
+          "label": "Price",
+          "name": "price",
+          "type": "text",
+          "instructions": "Leave empty while the figure is TBC.",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "25",
+            "class": "",
+            "id": ""
+          },
+          "default_value": "",
+          "maxlength": "",
+          "placeholder": "",
+          "prepend": "",
+          "append": "",
+          "parent_repeater": "field_stature_pricing_plans"
+        },
+        {
+          "key": "field_stature_pricing_plan_suffix",
+          "label": "Price suffix",
+          "name": "price_suffix",
+          "type": "text",
+          "instructions": "e.g. /month. Hidden when the price is empty.",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "25",
+            "class": "",
+            "id": ""
+          },
+          "default_value": "",
+          "maxlength": "",
+          "placeholder": "",
+          "prepend": "",
+          "append": "",
+          "parent_repeater": "field_stature_pricing_plans"
+        },
+        {
+          "key": "field_stature_pricing_plan_timeline",
+          "label": "Meta note",
+          "name": "timeline",
+          "type": "text",
+          "instructions": "Small line under the price, e.g. Typical timeline: 5–9 weeks, or For single-page and brochure sites.",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "40",
+            "class": "",
+            "id": ""
+          },
+          "default_value": "",
+          "maxlength": "",
+          "placeholder": "",
+          "prepend": "",
+          "append": "",
+          "parent_repeater": "field_stature_pricing_plans"
+        },
+        {
+          "key": "field_stature_pricing_plan_body",
+          "label": "Body",
+          "name": "body",
+          "type": "textarea",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "default_value": "",
+          "maxlength": "",
+          "rows": 4,
+          "placeholder": "",
+          "new_lines": "",
+          "parent_repeater": "field_stature_pricing_plans"
+        },
+        {
+          "key": "field_stature_pricing_plan_features",
+          "label": "Feature list",
+          "name": "features",
+          "type": "repeater",
+          "instructions": "Ticked list shown in place of, or beneath, the body.",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "layout": "table",
+          "pagination": 0,
+          "min": 0,
+          "max": 0,
+          "collapsed": "",
+          "button_label": "Add feature",
+          "rows_per_page": 20,
+          "parent_repeater": "field_stature_pricing_plans",
+          "sub_fields": [
+            {
+              "key": "field_stature_pricing_plan_feature_text",
+              "label": "Feature",
+              "name": "text",
+              "type": "text",
+              "instructions": "",
+              "required": 1,
+              "conditional_logic": 0,
+              "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+              },
+              "default_value": "",
+              "maxlength": "",
+              "placeholder": "",
+              "prepend": "",
+              "append": "",
+              "parent_repeater": "field_stature_pricing_plan_features"
+            }
+          ]
+        },
+        {
+          "key": "field_stature_pricing_plan_cta",
+          "label": "Call to action",
+          "name": "cta",
+          "type": "link",
+          "instructions": "Leave empty to use the approved default: Start a Project.",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "60",
+            "class": "",
+            "id": ""
+          },
+          "return_format": "array",
+          "parent_repeater": "field_stature_pricing_plans"
+        },
+        {
+          "key": "field_stature_pricing_plan_featured",
+          "label": "Featured",
+          "name": "featured",
+          "type": "true_false",
+          "instructions": "Navy card with a raised shadow.",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "40",
+            "class": "",
+            "id": ""
+          },
+          "message": "",
+          "default_value": 0,
+          "ui": 1,
+          "parent_repeater": "field_stature_pricing_plans"
+        }
+      ]
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "block",
+        "operator": "==",
+        "value": "stature/pricing"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": true,
+  "description": "Fields for the Pricing cards block.",
+  "show_in_rest": 0,
+  "modified": 1783695276
+}

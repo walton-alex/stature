@@ -1,0 +1,132 @@
+/* Pricing cards block. */
+
+.stature-pricing__grid {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: var(--sp-5);
+	align-items: stretch;
+}
+
+.stature-pricing__card {
+	display: flex;
+	flex-direction: column;
+	padding: var(--sp-6);
+	border-radius: var(--radius-lg);
+	border: var(--border-w) solid var(--navy-12);
+	background: var(--white);
+	font-family: var(--font-sans);
+}
+
+.stature-pricing__card.is-featured {
+	background: var(--navy);
+	border-color: var(--navy);
+	box-shadow: var(--shadow-raised);
+}
+
+.stature-pricing__head {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: var(--sp-4);
+}
+
+.stature-pricing__name {
+	margin: 0;
+	letter-spacing: normal;
+}
+
+.stature-pricing__price {
+	margin: var(--sp-5) 0 var(--sp-2);
+	color: var(--navy);
+}
+
+.stature-pricing__card.is-featured .stature-pricing__price {
+	color: var(--white);
+}
+
+.stature-pricing__affix {
+	font-size: var(--text-nav);
+	color: var(--text-body);
+}
+
+.stature-pricing__card.is-featured .stature-pricing__affix {
+	color: var(--white-70);
+}
+
+.stature-pricing__figure {
+	font-size: var(--text-h2);
+	font-weight: var(--w-light);
+	letter-spacing: var(--tracking-display);
+}
+
+.stature-pricing__timeline {
+	margin-bottom: var(--sp-5);
+	font-size: var(--text-small);
+	color: var(--text-body);
+}
+
+.stature-pricing__card.is-featured .stature-pricing__timeline {
+	color: var(--cyan);
+}
+
+.stature-pricing__body {
+	margin: 0 0 var(--sp-6);
+}
+
+.stature-pricing__card.is-featured .stature-pricing__body {
+	color: var(--white-70);
+}
+
+.stature-pricing__features {
+	display: grid;
+	align-content: start;
+	gap: var(--sp-3);
+	margin: 0 0 var(--sp-6);
+	padding: 0;
+	list-style: none;
+}
+
+.stature-pricing__feature {
+	display: flex;
+	align-items: flex-start;
+	gap: 0.75rem;
+	font-size: var(--text-nav);
+	line-height: 1.5;
+	color: var(--text-body);
+}
+
+.stature-pricing__feature .stature-check {
+	margin-top: 0.1875rem;
+	color: var(--navy);
+}
+
+.stature-pricing__card.is-featured .stature-pricing__feature {
+	color: var(--white-70);
+}
+
+.stature-pricing__card.is-featured .stature-pricing__feature .stature-check {
+	color: var(--cyan);
+}
+
+.stature-pricing__cta {
+	align-self: flex-start;
+	margin-top: auto;
+}
+
+.stature-pricing--compact .stature-pricing__name {
+	font-size: var(--text-card-title);
+}
+
+.stature-pricing--compact .stature-pricing__price {
+	margin: var(--sp-4) 0 0.125rem;
+}
+
+.stature-pricing--compact .stature-pricing__figure {
+	font-size: var(--text-h3);
+}
+
+@media (min-width: 48.875em) {
+	.stature-pricing__grid {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}

@@ -1,0 +1,281 @@
+{
+  "key": "group_stature_statement",
+  "title": "Block: Two-column statement",
+  "fields": [
+    {
+      "key": "field_stature_statement_eyebrow",
+      "label": "Eyebrow",
+      "name": "eyebrow",
+      "type": "text",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "50",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "maxlength": "",
+      "placeholder": "",
+      "prepend": "",
+      "append": ""
+    },
+    {
+      "key": "field_stature_statement_background",
+      "label": "Background",
+      "name": "background",
+      "type": "select",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "25",
+        "class": "",
+        "id": ""
+      },
+      "choices": {
+        "white": "White",
+        "grey": "Cool grey",
+        "navy": "Navy"
+      },
+      "default_value": "white",
+      "return_format": "value",
+      "multiple": 0,
+      "allow_null": 0,
+      "ui": 0,
+      "ajax": 0
+    },
+    {
+      "key": "field_stature_statement_align",
+      "label": "Vertical alignment",
+      "name": "align",
+      "type": "select",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "25",
+        "class": "",
+        "id": ""
+      },
+      "choices": {
+        "start": "Top",
+        "center": "Centre"
+      },
+      "default_value": "start",
+      "return_format": "value",
+      "multiple": 0,
+      "allow_null": 0,
+      "ui": 0,
+      "ajax": 0
+    },
+    {
+      "key": "field_stature_statement_panelled",
+      "label": "Panel the content",
+      "name": "panelled",
+      "type": "true_false",
+      "instructions": "Contains the columns in a bordered panel with the Stature symbol behind them.",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "50",
+        "class": "",
+        "id": ""
+      },
+      "message": "",
+      "default_value": 0,
+      "ui": 1
+    },
+    {
+      "key": "field_stature_statement_lead_with",
+      "label": "Left column",
+      "name": "lead_with",
+      "type": "select",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "50",
+        "class": "",
+        "id": ""
+      },
+      "choices": {
+        "heading": "Heading",
+        "price": "Price figure"
+      },
+      "default_value": "heading",
+      "return_format": "value",
+      "multiple": 0,
+      "allow_null": 0,
+      "ui": 0,
+      "ajax": 0
+    },
+    {
+      "key": "field_stature_statement_heading_level",
+      "label": "Heading level",
+      "name": "heading_level",
+      "type": "select",
+      "instructions": "H2 for a top-level section, H3 when nested beneath one.",
+      "required": 0,
+      "conditional_logic": [
+        [
+          {
+            "field": "field_stature_statement_lead_with",
+            "operator": "==",
+            "value": "heading"
+          }
+        ]
+      ],
+      "wrapper": {
+        "width": "50",
+        "class": "",
+        "id": ""
+      },
+      "choices": {
+        "h2": "H2",
+        "h3": "H3"
+      },
+      "default_value": "h2",
+      "return_format": "value",
+      "multiple": 0,
+      "allow_null": 0,
+      "ui": 0,
+      "ajax": 0
+    },
+    {
+      "key": "field_stature_statement_heading",
+      "label": "Heading",
+      "name": "heading",
+      "type": "text",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": [
+        [
+          {
+            "field": "field_stature_statement_lead_with",
+            "operator": "==",
+            "value": "heading"
+          }
+        ]
+      ],
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "maxlength": "",
+      "placeholder": "",
+      "prepend": "",
+      "append": ""
+    },
+    {
+      "key": "field_stature_statement_price",
+      "label": "Price",
+      "name": "price",
+      "type": "text",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": [
+        [
+          {
+            "field": "field_stature_statement_lead_with",
+            "operator": "==",
+            "value": "price"
+          }
+        ]
+      ],
+      "wrapper": {
+        "width": "50",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "maxlength": "",
+      "placeholder": "",
+      "prepend": "",
+      "append": ""
+    },
+    {
+      "key": "field_stature_statement_price_note",
+      "label": "Price note",
+      "name": "price_note",
+      "type": "text",
+      "instructions": "Small line beneath the figure, e.g. Fixed fee.",
+      "required": 0,
+      "conditional_logic": [
+        [
+          {
+            "field": "field_stature_statement_lead_with",
+            "operator": "==",
+            "value": "price"
+          }
+        ]
+      ],
+      "wrapper": {
+        "width": "50",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "maxlength": "",
+      "placeholder": "",
+      "prepend": "",
+      "append": ""
+    },
+    {
+      "key": "field_stature_statement_cta",
+      "label": "Call to action",
+      "name": "cta",
+      "type": "link",
+      "instructions": "Optional button beneath the left column.",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "return_format": "array"
+    },
+    {
+      "key": "field_stature_statement_body",
+      "label": "Body",
+      "name": "body",
+      "type": "wysiwyg",
+      "instructions": "Paragraphs only. Shown in the right column.",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "tabs": "visual",
+      "toolbar": "basic",
+      "media_upload": 0,
+      "delay": 0
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "block",
+        "operator": "==",
+        "value": "stature/statement"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": true,
+  "description": "Fields for the Two-column statement block.",
+  "show_in_rest": 0,
+  "modified": 1783698020
+}

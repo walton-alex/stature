@@ -38,7 +38,11 @@
 }
 
 .stature-services__card-title {
-	margin: var(--sp-5) 0 var(--sp-3);
+	margin: 0 0 var(--sp-3);
+}
+
+.stature-services__icon + .stature-services__card-title {
+	margin-top: var(--sp-5);
 }
 
 .stature-services.is-on-navy .stature-services__card-title {
@@ -47,6 +51,14 @@
 
 .stature-services__card-body {
 	margin: 0;
+}
+
+.stature-services--compact .stature-services__card-title {
+	font-size: var(--text-card-title);
+}
+
+.stature-services--compact .stature-services__card-body {
+	font-size: var(--text-nav);
 }
 
 .stature-services.is-on-navy .stature-services__card-body {

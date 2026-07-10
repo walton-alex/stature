@@ -1,0 +1,59 @@
+{
+  "key": "group_stature_cross_link",
+  "title": "Block: Cross-link row",
+  "fields": [
+    {
+      "key": "field_stature_cross_link_label",
+      "label": "Label",
+      "name": "label",
+      "type": "text",
+      "instructions": "Small uppercase text on the left, e.g. After launch.",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "40",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "maxlength": "",
+      "placeholder": "",
+      "prepend": "",
+      "append": ""
+    },
+    {
+      "key": "field_stature_cross_link_link",
+      "label": "Link",
+      "name": "link",
+      "type": "link",
+      "instructions": "",
+      "required": 1,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "60",
+        "class": "",
+        "id": ""
+      },
+      "return_format": "array"
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "block",
+        "operator": "==",
+        "value": "stature/cross-link"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": true,
+  "description": "Fields for the Cross-link row block.",
+  "show_in_rest": 0,
+  "modified": 1783604396
+}

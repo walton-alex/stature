@@ -78,12 +78,12 @@ function stature_header_nav(): void {
 function stature_header_nav_fallback(): void {
 	$pricing_children = array(
 		'Project Pricing'   => 'pricing',
-		'Paid Discovery'    => 'paid-discovery',
+		'Discovery'         => 'paid-discovery',
 		'Hosting & Support' => 'hosting-support',
 	);
 
 	$pricing_active = is_page( array_values( $pricing_children ) );
-	$work_active    = is_page( 'our-work' ) || is_singular( 'case_study' );
+	$work_active    = is_page( 'case-studies' ) || is_singular( 'case_study' );
 
 	echo '<ul class="stature-header__menu">';
 
@@ -104,8 +104,8 @@ function stature_header_nav_fallback(): void {
 	printf(
 		'<li class="stature-header__item"><a class="stature-header__link%s" href="%s">%s</a></li>',
 		$work_active ? ' is-active' : '',
-		esc_url( stature_url( 'our-work' ) ),
-		esc_html__( 'Our Work', 'stature' )
+		esc_url( stature_url( 'case-studies' ) ),
+		esc_html__( 'Case Studies', 'stature' )
 	);
 
 	printf(

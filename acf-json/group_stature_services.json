@@ -10,7 +10,11 @@
       "instructions": "",
       "required": 0,
       "conditional_logic": 0,
-      "wrapper": { "width": "50", "class": "", "id": "" },
+      "wrapper": {
+        "width": "50",
+        "class": "",
+        "id": ""
+      },
       "default_value": "",
       "maxlength": "",
       "placeholder": "",
@@ -25,9 +29,41 @@
       "instructions": "Navy adds the brand grain overlay.",
       "required": 0,
       "conditional_logic": 0,
-      "wrapper": { "width": "50", "class": "", "id": "" },
-      "choices": { "navy": "Navy", "white": "White", "grey": "Cool grey" },
+      "wrapper": {
+        "width": "50",
+        "class": "",
+        "id": ""
+      },
+      "choices": {
+        "navy": "Navy",
+        "white": "White",
+        "grey": "Cool grey"
+      },
       "default_value": "navy",
+      "return_format": "value",
+      "multiple": 0,
+      "allow_null": 0,
+      "ui": 0,
+      "ajax": 0
+    },
+    {
+      "key": "field_stature_services_card_size",
+      "label": "Card size",
+      "name": "card_size",
+      "type": "select",
+      "instructions": "Compact reduces the card title and body sizes.",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "50",
+        "class": "",
+        "id": ""
+      },
+      "choices": {
+        "standard": "Standard",
+        "compact": "Compact"
+      },
+      "default_value": "standard",
       "return_format": "value",
       "multiple": 0,
       "allow_null": 0,
@@ -42,7 +78,11 @@
       "instructions": "",
       "required": 1,
       "conditional_logic": 0,
-      "wrapper": { "width": "", "class": "", "id": "" },
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
       "default_value": "",
       "maxlength": "",
       "placeholder": "",
@@ -57,7 +97,11 @@
       "instructions": "",
       "required": 0,
       "conditional_logic": 0,
-      "wrapper": { "width": "", "class": "", "id": "" },
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
       "default_value": "",
       "maxlength": "",
       "rows": 3,
@@ -72,7 +116,11 @@
       "instructions": "",
       "required": 0,
       "conditional_logic": 0,
-      "wrapper": { "width": "", "class": "", "id": "" },
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
       "layout": "block",
       "pagination": 0,
       "min": 0,
@@ -86,11 +134,16 @@
           "label": "Icon",
           "name": "icon",
           "type": "select",
-          "instructions": "",
+          "instructions": "Choose No icon for plain content cards.",
           "required": 0,
           "conditional_logic": 0,
-          "wrapper": { "width": "50", "class": "", "id": "" },
+          "wrapper": {
+            "width": "50",
+            "class": "",
+            "id": ""
+          },
           "choices": {
+            "none": "No icon",
             "copywriting": "Copywriting",
             "web_design": "Web design",
             "web_development": "Web development"
@@ -111,7 +164,11 @@
           "instructions": "Shown top right, e.g. 01. Leave empty to hide.",
           "required": 0,
           "conditional_logic": 0,
-          "wrapper": { "width": "50", "class": "", "id": "" },
+          "wrapper": {
+            "width": "50",
+            "class": "",
+            "id": ""
+          },
           "default_value": "",
           "maxlength": "",
           "placeholder": "",
@@ -127,7 +184,11 @@
           "instructions": "",
           "required": 1,
           "conditional_logic": 0,
-          "wrapper": { "width": "", "class": "", "id": "" },
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
           "default_value": "",
           "maxlength": "",
           "placeholder": "",
@@ -143,7 +204,11 @@
           "instructions": "",
           "required": 0,
           "conditional_logic": 0,
-          "wrapper": { "width": "", "class": "", "id": "" },
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
           "default_value": "",
           "maxlength": "",
           "rows": 3,
@@ -161,7 +226,11 @@
       "instructions": "Small text beneath the cards.",
       "required": 0,
       "conditional_logic": 0,
-      "wrapper": { "width": "60", "class": "", "id": "" },
+      "wrapper": {
+        "width": "60",
+        "class": "",
+        "id": ""
+      },
       "default_value": "",
       "maxlength": "",
       "placeholder": "",
@@ -176,7 +245,11 @@
       "instructions": "",
       "required": 0,
       "conditional_logic": 0,
-      "wrapper": { "width": "40", "class": "", "id": "" },
+      "wrapper": {
+        "width": "40",
+        "class": "",
+        "id": ""
+      },
       "return_format": "array"
     }
   ],
@@ -185,7 +258,7 @@
       {
         "param": "block",
         "operator": "==",
-        "value": "stature\/services"
+        "value": "stature/services"
       }
     ]
   ],
@@ -198,5 +271,5 @@
   "active": true,
   "description": "Fields for the Service cards block.",
   "show_in_rest": 0,
-  "modified": 1783604396
+  "modified": 1783695757
 }

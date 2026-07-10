@@ -1,0 +1,14 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "stature/statement",
+	"title": "Two-column statement",
+	"category": "stature",
+	"icon": "align-pull-left",
+	"description": "A heading or a price figure in the left column, supporting prose in the right.",
+	"keywords": [ "statement", "editorial", "price", "band" ],
+	"textdomain": "stature",
+	"supports": { "align": false, "anchor": true, "html": false, "customClassName": true },
+	"acf": { "blockVersion": 3, "renderTemplate": "render.php" },
+	"style": "file:./style.css"
+}

@@ -17,7 +17,7 @@ $caption   = (string) get_field( 'caption' );
 $level     = (string) get_field( 'heading_level' );
 $image     = get_field( 'image' );
 $primary   = stature_block_link( get_field( 'primary_cta' ), stature_url( 'start-a-project' ), __( 'Start a Project', 'stature' ) );
-$secondary = stature_block_link( get_field( 'secondary_cta' ), stature_url( 'our-work' ), __( 'View Our Work', 'stature' ) );
+$secondary = stature_block_link( get_field( 'secondary_cta' ), stature_url( 'case-studies' ), __( 'View Our Work', 'stature' ) );
 
 $heading_tag = stature_block_heading_tag( $level );
 $classes     = stature_block_classes( $block, 'stature-hero' );
