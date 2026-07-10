@@ -1,0 +1,14 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "stature/inner-hero",
+	"title": "Inner hero",
+	"category": "stature",
+	"icon": "cover-image",
+	"description": "Flat navy hero with grain: eyebrow, heading and an optional lead. Opens every page except Home and Start a Project.",
+	"keywords": [ "hero", "inner", "page header", "banner" ],
+	"textdomain": "stature",
+	"supports": { "align": false, "anchor": true, "html": false, "customClassName": true },
+	"acf": { "blockVersion": 3, "renderTemplate": "render.php" },
+	"style": "file:./style.css"
+}

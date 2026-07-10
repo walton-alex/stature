@@ -41,6 +41,7 @@ function stature_setup(): void {
 	add_editor_style(
 		array(
 			'assets/css/tokens.css',
+			'assets/css/typography.css',
 			'assets/css/base.css',
 		)
 	);
@@ -49,10 +50,11 @@ add_action( 'after_setup_theme', 'stature_setup' );
 
 function stature_enqueue_assets(): void {
 	$styles = array(
-		'stature-tokens' => 'assets/css/tokens.css',
-		'stature-base'   => 'assets/css/base.css',
-		'stature-header' => 'assets/css/header.css',
-		'stature-footer' => 'assets/css/footer.css',
+		'stature-tokens'     => 'assets/css/tokens.css',
+		'stature-typography' => 'assets/css/typography.css',
+		'stature-base'       => 'assets/css/base.css',
+		'stature-header'     => 'assets/css/header.css',
+		'stature-footer'     => 'assets/css/footer.css',
 	);
 
 	$deps = array();

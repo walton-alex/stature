@@ -1,0 +1,22 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "stature/split",
+	"title": "Editorial split",
+	"category": "stature",
+	"icon": "align-pull-left",
+	"description": "Two columns: eyebrow, heading and body on one side, a rounded image on the other.",
+	"keywords": [ "split", "two column", "media", "text" ],
+	"textdomain": "stature",
+	"supports": {
+		"align": false,
+		"anchor": true,
+		"html": false,
+		"customClassName": true
+	},
+	"acf": {
+		"blockVersion": 3,
+		"renderTemplate": "render.php"
+	},
+	"style": "file:./style.css"
+}

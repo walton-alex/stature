@@ -1,0 +1,57 @@
+/* Team grid block. */
+
+.stature-team__grid {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: var(--sp-6);
+}
+
+.stature-team__member {
+	font-family: var(--font-sans);
+}
+
+.stature-team__photo {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	aspect-ratio: 4 / 4.6;
+	border-radius: var(--radius-md);
+	overflow: hidden;
+	background: var(--cool-grey);
+}
+
+.stature-team__placeholder {
+	font-size: var(--text-small);
+	color: var(--navy-40);
+}
+
+.stature-team__name {
+	margin: var(--sp-5) 0 0.125rem;
+	font-size: 1.25rem;
+	font-weight: var(--w-regular);
+	color: var(--navy);
+}
+
+.stature-team__role {
+	margin-bottom: var(--sp-3);
+	font-size: var(--text-small);
+	color: var(--text-body);
+}
+
+.stature-team__bio {
+	margin: 0;
+	font-size: var(--text-nav);
+}
+
+@media (min-width: 48.875em) {
+	.stature-team__grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (min-width: 64em) {
+	.stature-team__grid {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}

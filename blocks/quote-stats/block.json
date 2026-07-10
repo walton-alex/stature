@@ -1,0 +1,14 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "stature/quote-stats",
+	"title": "Quote and stats",
+	"category": "stature",
+	"icon": "format-quote",
+	"description": "Navy gradient band: a large quote and attribution beside a grid of statistics.",
+	"keywords": [ "quote", "testimonial", "stats", "social proof" ],
+	"textdomain": "stature",
+	"supports": { "align": false, "anchor": true, "html": false, "customClassName": true },
+	"acf": { "blockVersion": 3, "renderTemplate": "render.php" },
+	"style": "file:./style.css"
+}

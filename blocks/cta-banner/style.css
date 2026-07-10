@@ -1,0 +1,37 @@
+/* CTA banner block. */
+
+.stature-cta-banner__panel {
+	position: relative;
+	overflow: hidden;
+	border-radius: var(--radius-lg);
+	background: var(--navy);
+	font-family: var(--font-sans);
+}
+
+.stature-cta-banner__motif {
+	position: absolute;
+	right: -6.25rem;
+	bottom: -8.75rem;
+	width: 30rem;
+	height: auto;
+	max-width: none;
+	opacity: 0.95;
+	filter: brightness(1.5);
+	pointer-events: none;
+}
+
+.stature-cta-banner__content {
+	position: relative;
+	z-index: 1;
+	max-width: calc(40rem + var(--sp-8) * 2);
+	padding: var(--sp-9) var(--sp-8);
+}
+
+.stature-cta-banner__heading {
+	margin: 0;
+}
+
+.stature-cta-banner__body {
+	margin: var(--sp-5) 0 var(--sp-6);
+	color: var(--white-70);
+}

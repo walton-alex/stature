@@ -48,6 +48,8 @@ $stature_on_navy = 'navy' === $stature_variant;
 		</button>
 
 		<nav id="stature-primary-nav" class="stature-header__nav" aria-label="<?php esc_attr_e( 'Primary', 'stature' ); ?>">
+			<div class="stature-grain" aria-hidden="true"></div>
+
 			<div class="stature-header__panel-head">
 				<img
 					class="stature-header__panel-logo"
@@ -71,12 +73,18 @@ $stature_on_navy = 'navy' === $stature_variant;
 			<div class="stature-header__scroll">
 				<?php stature_header_nav(); ?>
 
-				<a
-					class="stature-header__cta <?php echo esc_attr( stature_button_classes( 'primary', 'md', $stature_on_navy ) ); ?>"
-					href="<?php echo esc_url( stature_url( 'start-a-project' ) ); ?>"
-				>
-					<?php esc_html_e( 'Start a Project', 'stature' ); ?>
-				</a>
+				<?php
+				get_template_part(
+					'parts/button',
+					null,
+					array(
+						'label'   => __( 'Start a Project', 'stature' ),
+						'url'     => stature_url( 'start-a-project' ),
+						'on_navy' => $stature_on_navy,
+						'class'   => 'stature-header__cta',
+					)
+				);
+				?>
 			</div>
 		</nav>
 	</header>

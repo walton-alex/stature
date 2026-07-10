@@ -1,0 +1,311 @@
+{
+  "key": "group_stature_split",
+  "title": "Block: Editorial split",
+  "fields": [
+    {
+      "key": "field_stature_split_eyebrow",
+      "label": "Eyebrow",
+      "name": "eyebrow",
+      "type": "text",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "50",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "maxlength": "",
+      "placeholder": "",
+      "prepend": "",
+      "append": ""
+    },
+    {
+      "key": "field_stature_split_heading_level",
+      "label": "Heading level",
+      "name": "heading_level",
+      "type": "select",
+      "instructions": "H2 for a top-level section, H3 when nested beneath one.",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "50",
+        "class": "",
+        "id": ""
+      },
+      "choices": {
+        "h2": "H2",
+        "h3": "H3"
+      },
+      "default_value": "h2",
+      "return_format": "value",
+      "multiple": 0,
+      "allow_null": 0,
+      "ui": 0,
+      "ajax": 0
+    },
+    {
+      "key": "field_stature_split_heading_size",
+      "label": "Heading size",
+      "name": "heading_size",
+      "type": "select",
+      "instructions": "Visual size. Set the level separately for document structure.",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "50",
+        "class": "",
+        "id": ""
+      },
+      "choices": {
+        "h2": "H2 (42px)",
+        "h3": "H3 (34px)"
+      },
+      "default_value": "h2",
+      "return_format": "value",
+      "multiple": 0,
+      "allow_null": 0,
+      "ui": 0,
+      "ajax": 0
+    },
+    {
+      "key": "field_stature_split_heading",
+      "label": "Heading",
+      "name": "heading",
+      "type": "text",
+      "instructions": "",
+      "required": 1,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "maxlength": "",
+      "placeholder": "",
+      "prepend": "",
+      "append": ""
+    },
+    {
+      "key": "field_stature_split_body",
+      "label": "Body",
+      "name": "body",
+      "type": "wysiwyg",
+      "instructions": "Paragraphs only.",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "tabs": "visual",
+      "toolbar": "basic",
+      "media_upload": 0,
+      "delay": 0
+    },
+    {
+      "key": "field_stature_split_image",
+      "label": "Image",
+      "name": "image",
+      "type": "image",
+      "instructions": "Falls back to a navy gradient panel until supplied.",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "return_format": "array",
+      "library": "all",
+      "preview_size": "medium",
+      "min_width": "",
+      "min_height": "",
+      "min_size": "",
+      "max_width": "",
+      "max_height": "",
+      "max_size": "",
+      "mime_types": ""
+    },
+    {
+      "key": "field_stature_split_media_position",
+      "label": "Image side",
+      "name": "media_position",
+      "type": "select",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "33",
+        "class": "",
+        "id": ""
+      },
+      "choices": {
+        "right": "Right",
+        "left": "Left"
+      },
+      "default_value": "right",
+      "return_format": "value",
+      "multiple": 0,
+      "allow_null": 0,
+      "ui": 0,
+      "ajax": 0
+    },
+    {
+      "key": "field_stature_split_media_ratio",
+      "label": "Image shape",
+      "name": "media_ratio",
+      "type": "select",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "33",
+        "class": "",
+        "id": ""
+      },
+      "choices": {
+        "fill": "Fill column",
+        "4-5": "Portrait 4:5"
+      },
+      "default_value": "fill",
+      "return_format": "value",
+      "multiple": 0,
+      "allow_null": 0,
+      "ui": 0,
+      "ajax": 0
+    },
+    {
+      "key": "field_stature_split_background",
+      "label": "Background",
+      "name": "background",
+      "type": "select",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "33",
+        "class": "",
+        "id": ""
+      },
+      "choices": {
+        "white": "White",
+        "grey": "Cool grey",
+        "navy": "Navy"
+      },
+      "default_value": "grey",
+      "return_format": "value",
+      "multiple": 0,
+      "allow_null": 0,
+      "ui": 0,
+      "ajax": 0
+    },
+    {
+      "key": "field_stature_split_media_scrim",
+      "label": "Darken the foot of the image",
+      "name": "media_scrim",
+      "type": "true_false",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "message": "",
+      "default_value": 1,
+      "ui": 1
+    },
+    {
+      "key": "field_stature_split_columns",
+      "label": "Columns",
+      "name": "columns",
+      "type": "select",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "33",
+        "class": "",
+        "id": ""
+      },
+      "choices": {
+        "equal": "Equal (1:1)",
+        "media-narrow": "Narrow image (1:1.3)"
+      },
+      "default_value": "equal",
+      "return_format": "value",
+      "multiple": 0,
+      "allow_null": 0,
+      "ui": 0,
+      "ajax": 0
+    },
+    {
+      "key": "field_stature_split_align",
+      "label": "Vertical alignment",
+      "name": "align",
+      "type": "select",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "33",
+        "class": "",
+        "id": ""
+      },
+      "choices": {
+        "center": "Centre",
+        "start": "Top"
+      },
+      "default_value": "center",
+      "return_format": "value",
+      "multiple": 0,
+      "allow_null": 0,
+      "ui": 0,
+      "ajax": 0
+    },
+    {
+      "key": "field_stature_split_placeholder_label",
+      "label": "Placeholder caption",
+      "name": "placeholder_label",
+      "type": "text",
+      "instructions": "Shown on a grey panel when no image is set, e.g. “Founder photo to follow”.",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "34",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "maxlength": "",
+      "placeholder": "",
+      "prepend": "",
+      "append": ""
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "block",
+        "operator": "==",
+        "value": "stature/split"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": true,
+  "description": "Fields for the Editorial split block.",
+  "show_in_rest": 0,
+  "modified": 1783604396
+}

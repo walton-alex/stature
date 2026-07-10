@@ -1,0 +1,188 @@
+{
+  "key": "group_stature_quote_stats",
+  "title": "Block: Quote and stats",
+  "fields": [
+    {
+      "key": "field_stature_quote_stats_eyebrow",
+      "label": "Eyebrow",
+      "name": "eyebrow",
+      "type": "text",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "50",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "maxlength": "",
+      "placeholder": "",
+      "prepend": "",
+      "append": ""
+    },
+    {
+      "key": "field_stature_quote_stats_highlight",
+      "label": "Highlighted words",
+      "name": "highlight",
+      "type": "text",
+      "instructions": "Words within the quote to render in cyan.",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "50",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "maxlength": "",
+      "placeholder": "",
+      "prepend": "",
+      "append": ""
+    },
+    {
+      "key": "field_stature_quote_stats_quote",
+      "label": "Quote",
+      "name": "quote",
+      "type": "textarea",
+      "instructions": "",
+      "required": 1,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "maxlength": "",
+      "rows": 3,
+      "placeholder": "",
+      "new_lines": ""
+    },
+    {
+      "key": "field_stature_quote_stats_attribution",
+      "label": "Attribution",
+      "name": "attribution",
+      "type": "text",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "maxlength": "",
+      "placeholder": "",
+      "prepend": "",
+      "append": ""
+    },
+    {
+      "key": "field_stature_quote_stats_stats",
+      "label": "Statistics",
+      "name": "stats",
+      "type": "repeater",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "layout": "block",
+      "pagination": 0,
+      "min": 0,
+      "max": 0,
+      "collapsed": "field_stature_quote_stats_stat_label",
+      "button_label": "Add statistic",
+      "rows_per_page": 20,
+      "sub_fields": [
+        {
+          "key": "field_stature_quote_stats_stat_value",
+          "label": "Value",
+          "name": "value",
+          "type": "text",
+          "instructions": "Use an em dash while the figure is to follow.",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "40",
+            "class": "",
+            "id": ""
+          },
+          "default_value": "",
+          "maxlength": "",
+          "placeholder": "",
+          "prepend": "",
+          "append": "",
+          "parent_repeater": "field_stature_quote_stats_stats"
+        },
+        {
+          "key": "field_stature_quote_stats_stat_label",
+          "label": "Label",
+          "name": "label",
+          "type": "text",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "60",
+            "class": "",
+            "id": ""
+          },
+          "default_value": "",
+          "maxlength": "",
+          "placeholder": "",
+          "prepend": "",
+          "append": "",
+          "parent_repeater": "field_stature_quote_stats_stats"
+        }
+      ]
+    },
+    {
+      "key": "field_stature_quote_stats_motif",
+      "label": "Background motif",
+      "name": "motif",
+      "type": "image",
+      "instructions": "The gradient S outline. Upload to the media library; the band renders without it.",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "return_format": "array",
+      "library": "all",
+      "preview_size": "medium",
+      "min_width": "",
+      "min_height": "",
+      "min_size": "",
+      "max_width": "",
+      "max_height": "",
+      "max_size": "",
+      "mime_types": ""
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "block",
+        "operator": "==",
+        "value": "stature/quote-stats"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": true,
+  "description": "Fields for the Quote and stats block.",
+  "show_in_rest": 0,
+  "modified": 1783604396
+}

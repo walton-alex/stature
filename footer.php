@@ -53,7 +53,7 @@ $stature_footer_columns = array(
 
 		<?php foreach ( $stature_footer_columns as $stature_location => $stature_column ) : ?>
 			<div class="stature-footer__column">
-				<div class="stature-footer__column-title">
+				<div class="stature-footer__column-title stature-label">
 					<?php echo esc_html( stature_menu_title( $stature_location, $stature_column['title'] ) ); ?>
 				</div>
 				<?php stature_footer_nav( $stature_location, $stature_column['links'] ); ?>

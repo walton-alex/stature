@@ -1,0 +1,14 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "stature/cta-banner",
+	"title": "CTA banner",
+	"category": "stature",
+	"icon": "megaphone",
+	"description": "Rounded navy panel with a heading, paragraph and call to action. Sits at the foot of every page.",
+	"keywords": [ "cta", "banner", "call to action" ],
+	"textdomain": "stature",
+	"supports": { "align": false, "anchor": true, "html": false, "customClassName": true },
+	"acf": { "blockVersion": 3, "renderTemplate": "render.php" },
+	"style": "file:./style.css"
+}

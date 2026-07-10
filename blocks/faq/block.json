@@ -1,0 +1,14 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "stature/faq",
+	"title": "FAQ accordion",
+	"category": "stature",
+	"icon": "editor-help",
+	"description": "Questions and answers on hairline dividers. Several can be open at once.",
+	"keywords": [ "faq", "accordion", "questions" ],
+	"textdomain": "stature",
+	"supports": { "align": false, "anchor": true, "html": false, "customClassName": true },
+	"acf": { "blockVersion": 3, "renderTemplate": "render.php" },
+	"style": "file:./style.css"
+}

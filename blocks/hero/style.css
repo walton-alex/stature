@@ -30,19 +30,11 @@
 .stature-hero__heading {
 	margin: 0;
 	width: 100%;
-	font-size: var(--text-display);
-	font-weight: var(--w-regular);
-	line-height: var(--leading-display);
-	letter-spacing: var(--tracking-display);
-	color: var(--navy);
 }
 
 .stature-hero__lead {
 	margin: var(--sp-6) auto var(--sp-7);
 	max-width: 40rem;
-	font-size: var(--text-lead);
-	font-weight: var(--w-light);
-	line-height: 1.5;
 }
 
 .stature-hero__actions {
@@ -61,14 +53,6 @@
 	overflow: hidden;
 	box-shadow: var(--shadow-raised);
 	aspect-ratio: 980 / 460;
-}
-
-.stature-hero__image {
-	position: absolute;
-	inset: 0;
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
 }
 
 .stature-hero__image--placeholder {
@@ -100,9 +84,6 @@
 }
 
 .stature-hero__caption span {
-	font-size: var(--text-eyebrow);
-	letter-spacing: var(--tracking-eyebrow);
-	text-transform: uppercase;
 	color: var(--white);
 	text-align: left;
 }

@@ -1,0 +1,22 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "stature/process",
+	"title": "Process steps",
+	"category": "stature",
+	"icon": "editor-ol",
+	"description": "Numbered steps joined by a hairline connector.",
+	"keywords": [ "process", "steps", "how we work", "timeline" ],
+	"textdomain": "stature",
+	"supports": {
+		"align": false,
+		"anchor": true,
+		"html": false,
+		"customClassName": true
+	},
+	"acf": {
+		"blockVersion": 3,
+		"renderTemplate": "render.php"
+	},
+	"style": "file:./style.css"
+}

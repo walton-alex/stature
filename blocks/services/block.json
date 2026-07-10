@@ -1,0 +1,22 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "stature/services",
+	"title": "Service cards",
+	"category": "stature",
+	"icon": "screenoptions",
+	"description": "Section intro above a row of icon cards, with an optional hairline note and call to action beneath.",
+	"keywords": [ "services", "cards", "icons", "solution" ],
+	"textdomain": "stature",
+	"supports": {
+		"align": false,
+		"anchor": true,
+		"html": false,
+		"customClassName": true
+	},
+	"acf": {
+		"blockVersion": 3,
+		"renderTemplate": "render.php"
+	},
+	"style": "file:./style.css"
+}

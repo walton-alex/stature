@@ -68,6 +68,8 @@
 
   --tracking-display: var(--wp--custom--tracking--display);
   --tracking-eyebrow: var(--wp--custom--tracking--eyebrow);
+  --text-nav: var(--wp--custom--text--nav);
+  --tap-target: var(--wp--custom--tap-target);
 
   --sp-1: var(--wp--preset--spacing--1);
   --sp-2: var(--wp--preset--spacing--2);
@@ -88,6 +90,7 @@
   --header-z: var(--wp--custom--header--z);
   --section-pad-y: var(--wp--custom--section--pad-y);
   --hero-pad-top: var(--wp--custom--hero--pad-top);
+  --hero-pad-bottom-inner: var(--wp--custom--hero--pad-bottom-inner);
 
   --radius-sm: var(--wp--custom--radius--sm);
   --radius-md: var(--wp--custom--radius--md);

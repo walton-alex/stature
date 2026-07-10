@@ -28,7 +28,8 @@
   flex-shrink: 0;
 }
 
-.stature-header__logo img {
+.stature-header__logo img,
+.stature-header__panel-logo {
   display: block;
   height: 2rem;
   width: auto;
@@ -38,18 +39,22 @@
   opacity: 1;
 }
 
-.stature-header__toggle {
+.stature-header__toggle,
+.stature-header__close {
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  gap: 0.3125rem;
-  width: 2.75rem;
-  height: 2.75rem;
+  width: var(--tap-target);
+  height: var(--tap-target);
   padding: 0;
   margin-right: -0.625rem;
   background: transparent;
   border: 0;
   cursor: pointer;
+}
+
+.stature-header__toggle {
+  flex-direction: column;
+  gap: 0.3125rem;
   color: var(--navy);
 }
 
@@ -111,17 +116,6 @@
     visibility 0s linear 0s;
 }
 
-.stature-header__nav::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: var(--grain);
-  background-size: var(--grain-size);
-  mix-blend-mode: soft-light;
-  opacity: var(--grain-opacity);
-  pointer-events: none;
-}
-
 .stature-header__nav::after {
   content: '';
   position: absolute;
@@ -144,25 +138,10 @@
   padding: var(--sp-5) var(--container-pad-x);
 }
 
-.stature-header__panel-logo {
-  display: block;
-  height: 2rem;
-  width: auto;
-}
-
 .stature-header__close {
   position: relative;
-  display: flex;
   align-items: center;
-  justify-content: center;
   flex-shrink: 0;
-  width: 2.75rem;
-  height: 2.75rem;
-  margin-right: -0.625rem;
-  padding: 0;
-  background: transparent;
-  border: 0;
-  cursor: pointer;
   color: var(--white);
 }
 
@@ -273,9 +252,12 @@
     display: none;
   }
 
-  .stature-header__nav::before,
   .stature-header__nav::after {
     content: none;
+  }
+
+  .stature-header__nav .stature-grain {
+    display: none;
   }
 
   .stature-header__nav {
@@ -329,7 +311,7 @@
   .stature-header__link {
     display: inline-flex;
     padding: 0;
-    font-size: 0.9375rem;
+    font-size: var(--text-nav);
     font-weight: var(--w-book);
     line-height: var(--leading-body);
     color: var(--navy-700);
@@ -407,7 +389,7 @@
   .stature-header--navy .stature-header__sublink {
     padding: 0.625rem 0.875rem;
     border-radius: var(--radius-sm);
-    font-size: 0.9375rem;
+    font-size: var(--text-nav);
     color: var(--navy);
     white-space: nowrap;
     background: transparent;

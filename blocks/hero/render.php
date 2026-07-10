@@ -11,10 +11,10 @@
 
 defined( 'ABSPATH' ) || exit;
 
-$heading   = stature_block_field( $block, 'heading', 'field_stature_hero_heading' );
-$lead      = stature_block_field( $block, 'lead', 'field_stature_hero_lead' );
-$caption   = stature_block_field( $block, 'caption', 'field_stature_hero_caption' );
-$level     = stature_block_field( $block, 'heading_level', 'field_stature_hero_heading_level' );
+$heading   = (string) get_field( 'heading' );
+$lead      = (string) get_field( 'lead' );
+$caption   = (string) get_field( 'caption' );
+$level     = (string) get_field( 'heading_level' );
 $image     = get_field( 'image' );
 $primary   = stature_block_link( get_field( 'primary_cta' ), stature_url( 'start-a-project' ), __( 'Start a Project', 'stature' ) );
 $secondary = stature_block_link( get_field( 'secondary_cta' ), stature_url( 'our-work' ), __( 'View Our Work', 'stature' ) );
@@ -38,34 +38,18 @@ $anchor      = ! empty( $block['anchor'] ) ? $block['anchor'] : '';
 
 	<div class="stature-hero__inner">
 		<?php if ( '' !== $heading ) : ?>
-			<<?php echo esc_attr( $heading_tag ); ?> class="stature-hero__heading"><?php echo esc_html( $heading ); ?></<?php echo esc_attr( $heading_tag ); ?>>
+			<<?php echo esc_attr( $heading_tag ); ?> class="stature-hero__heading stature-heading stature-heading--display"><?php echo esc_html( $heading ); ?></<?php echo esc_attr( $heading_tag ); ?>>
 		<?php endif; ?>
 
 		<?php if ( '' !== $lead ) : ?>
-			<p class="stature-hero__lead"><?php echo esc_html( $lead ); ?></p>
+			<p class="stature-hero__lead stature-lead"><?php echo esc_html( $lead ); ?></p>
 		<?php endif; ?>
 
 		<div class="stature-hero__actions">
-			<a
-				class="<?php echo esc_attr( stature_button_classes( 'primary', 'lg' ) ); ?>"
-				href="<?php echo esc_url( $primary['url'] ); ?>"
-				<?php if ( '' !== $primary['target'] ) : ?>
-					target="<?php echo esc_attr( $primary['target'] ); ?>"
-					rel="<?php echo esc_attr( $primary['rel'] ); ?>"
-				<?php endif; ?>
-			>
-				<?php echo esc_html( $primary['label'] ); ?>
-			</a>
-			<a
-				class="<?php echo esc_attr( stature_button_classes( 'secondary', 'lg' ) ); ?>"
-				href="<?php echo esc_url( $secondary['url'] ); ?>"
-				<?php if ( '' !== $secondary['target'] ) : ?>
-					target="<?php echo esc_attr( $secondary['target'] ); ?>"
-					rel="<?php echo esc_attr( $secondary['rel'] ); ?>"
-				<?php endif; ?>
-			>
-				<?php echo esc_html( $secondary['label'] ); ?>
-			</a>
+			<?php
+			get_template_part( 'parts/button', null, array_merge( $primary, array( 'size' => 'lg' ) ) );
+			get_template_part( 'parts/button', null, array_merge( $secondary, array( 'variant' => 'secondary', 'size' => 'lg' ) ) );
+			?>
 		</div>
 
 		<div class="stature-hero__panel">
@@ -76,12 +60,12 @@ $anchor      = ! empty( $block['anchor'] ) ? $block['anchor'] : '';
 					'large',
 					false,
 					array(
-						'class'   => 'stature-hero__image',
+						'class'   => 'stature-hero__image stature-cover',
 						'loading' => 'eager',
 					)
 				);
 			} else {
-				echo '<div class="stature-hero__image stature-hero__image--placeholder" aria-hidden="true"></div>';
+				echo '<div class="stature-hero__image stature-hero__image--placeholder stature-cover" aria-hidden="true"></div>';
 			}
 			?>
 
@@ -95,7 +79,7 @@ $anchor      = ! empty( $block['anchor'] ) ? $block['anchor'] : '';
 						alt=""
 						aria-hidden="true"
 					>
-					<span><?php echo esc_html( $caption ); ?></span>
+					<span class="stature-label"><?php echo esc_html( $caption ); ?></span>
 				</div>
 			<?php endif; ?>
 		</div>

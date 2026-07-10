@@ -42,9 +42,6 @@
 
 .stature-footer__column-title {
 	margin-bottom: var(--sp-4);
-	font-size: var(--text-eyebrow);
-	letter-spacing: var(--tracking-eyebrow);
-	text-transform: uppercase;
 	color: var(--cyan);
 }
 
@@ -55,7 +52,7 @@
 	margin: 0;
 	padding: 0;
 	list-style: none;
-	font-size: 0.9375rem;
+	font-size: var(--text-nav);
 }
 
 .stature-footer__links li {

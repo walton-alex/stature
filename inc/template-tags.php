@@ -37,17 +37,6 @@ function stature_button_classes( string $variant = 'primary', string $size = 'md
 	return implode( ' ', $classes );
 }
 
-function stature_eyebrow( string $text, bool $on_navy = false ): void {
-	if ( '' === trim( $text ) ) {
-		return;
-	}
-
-	printf(
-		'<div class="stature-eyebrow%s">%s</div>',
-		$on_navy ? ' is-on-navy' : '',
-		esc_html( $text )
-	);
-}
 
 function stature_asset( string $path ): string {
 	return get_theme_file_uri( 'assets/' . ltrim( $path, '/' ) );

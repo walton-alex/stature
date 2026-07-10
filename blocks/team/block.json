@@ -1,0 +1,14 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "stature/team",
+	"title": "Team grid",
+	"category": "stature",
+	"icon": "groups",
+	"description": "Section intro above a grid of people: photo, name, role and a short biography.",
+	"keywords": [ "team", "people", "specialists" ],
+	"textdomain": "stature",
+	"supports": { "align": false, "anchor": true, "html": false, "customClassName": true },
+	"acf": { "blockVersion": 3, "renderTemplate": "render.php" },
+	"style": "file:./style.css"
+}
