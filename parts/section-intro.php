@@ -8,6 +8,7 @@
  * @param string $args['lead']    Lead paragraph.
  * @param bool   $args['on_navy'] Whether the intro sits on a navy surface.
  * @param bool   $args['center']  Centre the intro.
+ * @param bool   $args['split']   Set the heading beside the lead in two columns.
  *
  * @package Stature
  */
@@ -23,6 +24,7 @@ $intro = wp_parse_args(
 		'lead'    => '',
 		'on_navy' => false,
 		'center'  => false,
+		'split'   => false,
 	)
 );
 
@@ -30,9 +32,13 @@ if ( '' === $intro['heading'] && '' === $intro['eyebrow'] ) {
 	return;
 }
 
+$is_split = ! empty( $intro['split'] ) && '' !== $intro['lead'];
+
 $intro_classes = array( 'stature-section-intro' );
 
-if ( $intro['center'] ) {
+if ( $is_split ) {
+	$intro_classes[] = 'is-split';
+} elseif ( $intro['center'] ) {
 	$intro_classes[] = 'is-centred';
 }
 
@@ -43,22 +49,24 @@ if ( $intro['on_navy'] ) {
 $intro_tag = stature_block_heading_tag( $intro['tag'], array( 'h2', 'h3' ), 'h2' );
 ?>
 <div class="<?php echo esc_attr( implode( ' ', $intro_classes ) ); ?>">
-	<?php
-	get_template_part(
-		'parts/eyebrow',
-		null,
-		array(
-			'text'    => $intro['eyebrow'],
-			'on_navy' => $intro['on_navy'],
-		)
-	);
-	?>
+	<div class="stature-section-intro__head">
+		<?php
+		get_template_part(
+			'parts/eyebrow',
+			null,
+			array(
+				'text'    => $intro['eyebrow'],
+				'on_navy' => $intro['on_navy'],
+			)
+		);
+		?>
 
-	<?php if ( '' !== $intro['heading'] ) : ?>
-		<<?php echo esc_attr( $intro_tag ); ?> class="stature-section-intro__heading stature-heading stature-heading--h2<?php echo $intro['on_navy'] ? ' is-on-navy' : ''; ?>">
-			<?php echo esc_html( $intro['heading'] ); ?>
-		</<?php echo esc_attr( $intro_tag ); ?>>
-	<?php endif; ?>
+		<?php if ( '' !== $intro['heading'] ) : ?>
+			<<?php echo esc_attr( $intro_tag ); ?> class="stature-section-intro__heading stature-heading stature-heading--h2<?php echo $intro['on_navy'] ? ' is-on-navy' : ''; ?>">
+				<?php echo esc_html( $intro['heading'] ); ?>
+			</<?php echo esc_attr( $intro_tag ); ?>>
+		<?php endif; ?>
+	</div>
 
 	<?php if ( '' !== $intro['lead'] ) : ?>
 		<p class="stature-section-intro__lead stature-lead"><?php echo esc_html( $intro['lead'] ); ?></p>

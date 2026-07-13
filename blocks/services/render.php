@@ -11,12 +11,13 @@
 
 defined( 'ABSPATH' ) || exit;
 
-$eyebrow   = (string) get_field( 'eyebrow' );
-$heading   = (string) get_field( 'heading' );
-$lead      = (string) get_field( 'lead' );
-$note      = (string) get_field( 'note' );
-$bg        = (string) get_field( 'background' );
-$card_size = (string) get_field( 'card_size' );
+$eyebrow      = (string) get_field( 'eyebrow' );
+$heading      = (string) get_field( 'heading' );
+$lead         = (string) get_field( 'lead' );
+$note         = (string) get_field( 'note' );
+$bg           = (string) get_field( 'background' );
+$card_size    = (string) get_field( 'card_size' );
+$intro_layout = (string) get_field( 'intro_layout' );
 
 $bg      = in_array( $bg, array( 'white', 'grey', 'navy' ), true ) ? $bg : 'navy';
 $on_navy = 'navy' === $bg;
@@ -57,6 +58,7 @@ $icons  = array( 'copywriting', 'web_design', 'web_development' );
 				'heading' => $heading,
 				'lead'    => $lead,
 				'on_navy' => $on_navy,
+				'split'   => 'split' === $intro_layout,
 			)
 		);
 		?>

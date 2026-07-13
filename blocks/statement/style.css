@@ -26,6 +26,10 @@
 	letter-spacing: var(--tracking-display);
 }
 
+.stature-statement.is-panelled .stature-statement__figure {
+	font-size: var(--text-display);
+}
+
 .stature-statement__note {
 	margin-top: var(--sp-2);
 	font-size: var(--text-small);
@@ -60,10 +64,6 @@
 .stature-statement.is-panelled.is-on-navy .stature-statement__panel {
 	border-color: var(--white-16);
 	background: var(--navy-800);
-}
-
-.stature-statement.is-panelled .stature-statement__figure {
-	font-size: var(--text-display);
 }
 
 .stature-statement__watermark {

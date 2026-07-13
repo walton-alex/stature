@@ -136,6 +136,30 @@ button {
 	color: var(--white-70);
 }
 
+.stature-section-intro.is-split {
+	max-width: none;
+}
+
+.stature-section-intro.is-split .stature-section-intro__lead {
+	font-size: var(--text-base);
+	font-weight: var(--w-book);
+	line-height: var(--leading-body);
+}
+
+@media (min-width: 64em) {
+	.stature-section-intro.is-split {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: var(--sp-9);
+		align-items: start;
+	}
+
+	.stature-section-intro.is-split .stature-section-intro__lead {
+		margin: 0;
+		align-self: end;
+	}
+}
+
 .stature-eyebrow {
 	display: flex;
 	align-items: center;

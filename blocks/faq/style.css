@@ -21,6 +21,7 @@
 	color: var(--navy);
 	cursor: pointer;
 	list-style: none;
+	user-select: none;
 }
 
 .stature-faq__question::-webkit-details-marker {

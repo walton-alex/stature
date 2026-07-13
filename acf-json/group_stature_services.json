@@ -71,6 +71,30 @@
       "ajax": 0
     },
     {
+      "key": "field_stature_services_intro_layout",
+      "label": "Intro layout",
+      "name": "intro_layout",
+      "type": "select",
+      "instructions": "Split sets the heading beside the intro paragraph in two columns.",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "50",
+        "class": "",
+        "id": ""
+      },
+      "choices": {
+        "stacked": "Stacked",
+        "split": "Split (heading beside copy)"
+      },
+      "default_value": "stacked",
+      "return_format": "value",
+      "multiple": 0,
+      "allow_null": 0,
+      "ui": 0,
+      "ajax": 0
+    },
+    {
       "key": "field_stature_services_heading",
       "label": "Heading",
       "name": "heading",
@@ -271,5 +295,5 @@
   "active": true,
   "description": "Fields for the Service cards block.",
   "show_in_rest": 0,
-  "modified": 1783695757
+  "modified": 1783939690
 }
