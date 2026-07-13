@@ -57,3 +57,49 @@
 	margin: 0;
 	max-width: 35rem;
 }
+
+/*
+ * Row orientation: steps run left-to-right on desktop, each number joined to
+ * the next by a horizontal line. Below the breakpoint it stays the vertical
+ * timeline above.
+ */
+@media (min-width: 64em) {
+	.stature-process--row .stature-process__list {
+		--process-row-gap: var(--sp-9);
+		display: flex;
+		max-width: none;
+		gap: var(--process-row-gap);
+	}
+
+	.stature-process--row .stature-process__step {
+		position: relative;
+		display: block;
+		flex: 1;
+	}
+
+	.stature-process--row .stature-process__marker {
+		display: block;
+	}
+
+	.stature-process--row .stature-process__connector {
+		position: absolute;
+		top: 1.5rem;
+		left: 3rem;
+		width: calc(100% - 3rem + var(--process-row-gap));
+		height: var(--border-w);
+		margin: 0;
+	}
+
+	.stature-process--row .stature-process__content {
+		margin-top: var(--sp-5);
+		padding-bottom: 0;
+	}
+
+	.stature-process--row .stature-process__title {
+		margin-top: 0;
+	}
+
+	.stature-process--row .stature-process__body {
+		max-width: none;
+	}
+}

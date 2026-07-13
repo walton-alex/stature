@@ -59,10 +59,50 @@ a:hover {
   text-transform: uppercase;
 }
 
-.stature-prose > p {
+.stature-prose > * {
   margin: 0;
 }
 
-.stature-prose > p + p {
+.stature-prose > * + * {
   margin-top: var(--sp-4);
+}
+
+.stature-prose > h2,
+.stature-prose > h3 {
+  margin-top: var(--sp-7);
+  font-weight: var(--w-regular);
+  line-height: var(--leading-heading);
+  color: var(--navy);
+}
+
+.stature-prose > h2 {
+  font-size: var(--text-h4);
+}
+
+.stature-prose > h3 {
+  font-size: var(--text-card-title);
+}
+
+.stature-prose > :first-child {
+  margin-top: 0;
+}
+
+.stature-prose ul,
+.stature-prose ol {
+  padding-left: 1.25rem;
+}
+
+.stature-prose li + li {
+  margin-top: var(--sp-2);
+}
+
+.stature-prose a {
+  color: var(--navy);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.stature-prose strong {
+  font-weight: var(--w-regular);
+  color: var(--navy);
 }

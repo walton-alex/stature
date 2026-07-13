@@ -5,7 +5,7 @@
  * @param string $args['label']   Button text.
  * @param string $args['url']     Destination.
  * @param string $args['variant'] primary | secondary | ghost.
- * @param string $args['size']    sm | md | lg.
+ * @param string $args['size']    md | lg.
  * @param bool   $args['on_navy'] Whether the button sits on a navy surface.
  * @param string $args['target']  Link target.
  * @param string $args['rel']     Link rel.
@@ -35,6 +35,8 @@ $button = wp_parse_args(
 if ( '' === $button['label'] || '' === $button['url'] ) {
 	return;
 }
+
+$button['size'] = in_array( $button['size'], array( 'md', 'lg' ), true ) ? $button['size'] : 'md';
 
 $button_classes = trim(
 	$button['class'] . ' ' . stature_button_classes( $button['variant'], $button['size'], (bool) $button['on_navy'] )

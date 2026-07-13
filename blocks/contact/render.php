@@ -62,7 +62,7 @@ $anchor  = ! empty( $block['anchor'] ) ? $block['anchor'] : '';
 				?>
 			</div>
 
-			<div class="stature-contact__panel">
+			<div class="stature-contact__panel stature-gform">
 				<?php if ( $form_id > 0 && function_exists( 'gravity_form' ) ) : ?>
 					<?php gravity_form( $form_id, false, false, false, null, true, 0, true ); ?>
 				<?php elseif ( $is_preview ) : ?>

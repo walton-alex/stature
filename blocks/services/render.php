@@ -120,7 +120,7 @@ $icons  = array( 'copywriting', 'web_design', 'web_development' );
 						array_merge(
 							$cta,
 							array(
-								'size'    => 'sm',
+								'size'    => 'md',
 								'on_navy' => $on_navy,
 							)
 						)

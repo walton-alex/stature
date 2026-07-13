@@ -175,7 +175,7 @@
   list-style: none;
 }
 
-.stature-header__menu > .stature-header__item {
+.stature-header__menu > .stature-header__item:not(:last-child) {
   border-bottom: var(--border-w) solid var(--white-16);
 }
 
@@ -283,7 +283,7 @@
   }
 
   .stature-header__menu > .stature-header__item {
-    border-bottom: 0;
+    border-bottom: 0 !important;
   }
 
   .stature-header__cta {

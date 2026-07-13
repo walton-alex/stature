@@ -11,15 +11,21 @@
 
 defined( 'ABSPATH' ) || exit;
 
-$eyebrow = (string) get_field( 'eyebrow' );
-$heading = (string) get_field( 'heading' );
-$lead    = (string) get_field( 'lead' );
-$bg      = (string) get_field( 'background' );
+$eyebrow     = (string) get_field( 'eyebrow' );
+$heading     = (string) get_field( 'heading' );
+$lead        = (string) get_field( 'lead' );
+$bg          = (string) get_field( 'background' );
+$orientation = (string) get_field( 'orientation' );
 
 $bg = in_array( $bg, array( 'white', 'grey' ), true ) ? $bg : 'white';
 
 $classes = stature_section_classes( $block, 'stature-process', $bg );
-$anchor  = ! empty( $block['anchor'] ) ? $block['anchor'] : '';
+
+if ( 'row' === $orientation ) {
+	$classes .= ' stature-process--row';
+}
+
+$anchor = ! empty( $block['anchor'] ) ? $block['anchor'] : '';
 
 $steps = get_field( 'steps' );
 $total = is_array( $steps ) ? count( $steps ) : 0;

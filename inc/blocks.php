@@ -61,5 +61,5 @@ function stature_load_gravity_forms( array $field ): array {
 
 	return $field;
 }
-add_filter( 'acf/load_field/key=field_stature_contact_form_id', 'stature_load_gravity_forms' );
+add_filter( 'acf/load_field/name=form_id', 'stature_load_gravity_forms' );
 

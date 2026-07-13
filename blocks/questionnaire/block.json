@@ -1,0 +1,19 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "stature/questionnaire",
+  "title": "Questionnaire",
+  "category": "stature",
+  "icon": "clipboard",
+  "description": "A start splash with a call to action that reveals a multi-step Gravity Form.",
+  "keywords": ["questionnaire", "form", "survey", "onboarding"],
+  "textdomain": "stature",
+  "supports": {
+    "align": false,
+    "anchor": true,
+    "html": false,
+    "customClassName": true
+  },
+  "acf": { "blockVersion": 3, "renderTemplate": "render.php" },
+  "style": "file:./style.css"
+}

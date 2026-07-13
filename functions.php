@@ -79,6 +79,17 @@ function stature_enqueue_assets(): void {
 		// are never triggered by the block renderer.
 		stature_enqueue_block_styles( array( 'stature/banner', 'stature/cta-banner' ) );
 	}
+
+	$id = get_queried_object_id();
+
+	if ( is_singular() && ( has_block( 'stature/contact', $id ) || has_block( 'stature/questionnaire', $id ) ) ) {
+		wp_enqueue_style(
+			'stature-gforms',
+			get_theme_file_uri( 'assets/css/gforms.css' ),
+			array( 'stature-base' ),
+			stature_asset_version( 'assets/css/gforms.css' )
+		);
+	}
 }
 add_action( 'wp_enqueue_scripts', 'stature_enqueue_assets' );
 
@@ -121,6 +132,15 @@ function stature_enqueue_script_modules(): void {
 		array( '@stature/utils' ),
 		stature_asset_version( 'assets/js/header.js' )
 	);
+
+	if ( is_singular() && has_block( 'stature/questionnaire', get_queried_object_id() ) ) {
+		wp_enqueue_script_module(
+			'@stature/questionnaire',
+			get_theme_file_uri( 'assets/js/questionnaire.js' ),
+			array( '@stature/utils' ),
+			stature_asset_version( 'assets/js/questionnaire.js' )
+		);
+	}
 }
 add_action( 'wp_enqueue_scripts', 'stature_enqueue_script_modules' );
 

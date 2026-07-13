@@ -10,7 +10,11 @@
       "instructions": "",
       "required": 0,
       "conditional_logic": 0,
-      "wrapper": { "width": "50", "class": "", "id": "" },
+      "wrapper": {
+        "width": "50",
+        "class": "",
+        "id": ""
+      },
       "default_value": "",
       "maxlength": "",
       "placeholder": "",
@@ -25,9 +29,40 @@
       "instructions": "",
       "required": 0,
       "conditional_logic": 0,
-      "wrapper": { "width": "50", "class": "", "id": "" },
-      "choices": { "white": "White", "grey": "Cool grey" },
+      "wrapper": {
+        "width": "50",
+        "class": "",
+        "id": ""
+      },
+      "choices": {
+        "white": "White",
+        "grey": "Cool grey"
+      },
       "default_value": "white",
+      "return_format": "value",
+      "multiple": 0,
+      "allow_null": 0,
+      "ui": 0,
+      "ajax": 0
+    },
+    {
+      "key": "field_stature_process_orientation",
+      "label": "Orientation",
+      "name": "orientation",
+      "type": "select",
+      "instructions": "Row lays the steps left-to-right on desktop, connected by a horizontal line. Stacks on mobile.",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "50",
+        "class": "",
+        "id": ""
+      },
+      "choices": {
+        "timeline": "Timeline (vertical)",
+        "row": "Row (horizontal)"
+      },
+      "default_value": "timeline",
       "return_format": "value",
       "multiple": 0,
       "allow_null": 0,
@@ -42,7 +77,11 @@
       "instructions": "",
       "required": 1,
       "conditional_logic": 0,
-      "wrapper": { "width": "", "class": "", "id": "" },
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
       "default_value": "",
       "maxlength": "",
       "placeholder": "",
@@ -57,7 +96,11 @@
       "instructions": "",
       "required": 0,
       "conditional_logic": 0,
-      "wrapper": { "width": "", "class": "", "id": "" },
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
       "default_value": "",
       "maxlength": "",
       "rows": 3,
@@ -72,7 +115,11 @@
       "instructions": "Numbered automatically in order.",
       "required": 0,
       "conditional_logic": 0,
-      "wrapper": { "width": "", "class": "", "id": "" },
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
       "layout": "block",
       "pagination": 0,
       "min": 0,
@@ -89,7 +136,11 @@
           "instructions": "",
           "required": 1,
           "conditional_logic": 0,
-          "wrapper": { "width": "", "class": "", "id": "" },
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
           "default_value": "",
           "maxlength": "",
           "placeholder": "",
@@ -105,7 +156,11 @@
           "instructions": "",
           "required": 0,
           "conditional_logic": 0,
-          "wrapper": { "width": "", "class": "", "id": "" },
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
           "default_value": "",
           "maxlength": "",
           "rows": 4,
@@ -121,7 +176,7 @@
       {
         "param": "block",
         "operator": "==",
-        "value": "stature\/process"
+        "value": "stature/process"
       }
     ]
   ],
@@ -134,5 +189,5 @@
   "active": true,
   "description": "Fields for the Process steps block.",
   "show_in_rest": 0,
-  "modified": 1783604396
+  "modified": 1783941462
 }

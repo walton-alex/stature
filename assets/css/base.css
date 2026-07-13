@@ -89,6 +89,17 @@ button {
 	background: var(--navy);
 }
 
+/*
+ * Where two sections share a background there is no colour change to justify a
+ * full double gap, so drop the trailing section's top padding to halve it. The
+ * case study template tunes its own seams, so it opts out.
+ */
+body:not(.single-case_study) .stature-section--white + .stature-section--white,
+body:not(.single-case_study) .stature-section--grey + .stature-section--grey,
+body:not(.single-case_study) .stature-section--navy + .stature-section--navy {
+	padding-top: 0;
+}
+
 .stature-grain {
 	position: absolute;
 	inset: 0;
@@ -97,6 +108,35 @@ button {
 	mix-blend-mode: soft-light;
 	opacity: var(--grain-opacity);
 	pointer-events: none;
+}
+
+.stature-error {
+	display: flex;
+	align-items: center;
+	min-height: calc(100vh - var(--header-h) - var(--admin-bar-h));
+}
+
+.stature-error__inner {
+	max-width: 40rem;
+}
+
+.stature-error__heading {
+	margin: 0;
+}
+
+.stature-error__lead {
+	margin: var(--sp-5) 0 0;
+	font-size: var(--text-lead);
+	font-weight: var(--w-light);
+	line-height: 1.5;
+	color: var(--white-70);
+}
+
+.stature-error__actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--sp-4);
+	margin-top: var(--sp-7);
 }
 
 .stature-section__inner {
@@ -383,11 +423,6 @@ button {
 .stature-btn__arrow {
 	font-size: 1.1em;
 	line-height: 1;
-}
-
-.stature-btn--sm {
-	padding: 0.5rem 1.125rem;
-	font-size: 0.875rem;
 }
 
 .stature-btn--md {
