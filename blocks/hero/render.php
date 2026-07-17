@@ -19,6 +19,30 @@ $image     = get_field( 'image' );
 $primary   = stature_block_link( get_field( 'primary_cta' ), stature_url( 'start-a-project' ), __( 'Start a Project', 'stature' ) );
 $secondary = stature_block_link( get_field( 'secondary_cta' ), stature_url( 'case-studies' ), __( 'View Our Work', 'stature' ) );
 
+/*
+ * The panel features a case study: the one picked, or the most recent. It falls
+ * back to the block's own image only when there's no case study to show.
+ */
+$picked = (int) get_field( 'case_study' );
+$case   = $picked ? get_post( $picked ) : stature_latest_case_study();
+
+if ( ! $case instanceof WP_Post || 'case_study' !== $case->post_type || 'publish' !== $case->post_status ) {
+	$case = null;
+}
+
+$panel_image = $case ? (int) get_post_thumbnail_id( $case->ID ) : 0;
+$panel_image = $panel_image && wp_attachment_is_image( $panel_image ) ? $panel_image : 0;
+$panel_url   = '';
+
+if ( $panel_image ) {
+	$panel_url = (string) get_permalink( $case );
+	$caption   = (string) get_the_title( $case );
+} elseif ( is_array( $image ) && ! empty( $image['ID'] ) && wp_attachment_is_image( (int) $image['ID'] ) ) {
+	$panel_image = (int) $image['ID'];
+}
+
+$panel_tag = $panel_url ? 'a' : 'div';
+
 $heading_tag = stature_block_heading_tag( $level );
 $classes     = stature_block_classes( $block, 'stature-hero' );
 $anchor      = ! empty( $block['anchor'] ) ? $block['anchor'] : '';
@@ -52,16 +76,26 @@ $anchor      = ! empty( $block['anchor'] ) ? $block['anchor'] : '';
 			?>
 		</div>
 
-		<div class="stature-hero__panel">
+		<<?php echo esc_attr( $panel_tag ); ?>
+			class="stature-hero__panel"
+			<?php if ( '' !== $panel_url ) : ?>
+				href="<?php echo esc_url( $panel_url ); ?>"
+			<?php endif; ?>
+		>
 			<?php
-			if ( is_array( $image ) && ! empty( $image['ID'] ) ) {
+			if ( $panel_image ) {
 				echo wp_get_attachment_image(
-					(int) $image['ID'],
+					$panel_image,
 					'large',
 					false,
 					array(
 						'class'   => 'stature-hero__image stature-cover',
 						'loading' => 'eager',
+						'alt'     => $case ? sprintf(
+							/* translators: %s: case study name. */
+							esc_attr__( '%s website', 'stature' ),
+							get_the_title( $case )
+						) : '',
 					)
 				);
 			} else {
@@ -80,8 +114,11 @@ $anchor      = ! empty( $block['anchor'] ) ? $block['anchor'] : '';
 						aria-hidden="true"
 					>
 					<span class="stature-label"><?php echo esc_html( $caption ); ?></span>
+					<?php if ( '' !== $panel_url ) : ?>
+						<span class="stature-btn__arrow" aria-hidden="true">&rarr;</span>
+					<?php endif; ?>
 				</div>
 			<?php endif; ?>
-		</div>
+		</<?php echo esc_attr( $panel_tag ); ?>>
 	</div>
 </section>

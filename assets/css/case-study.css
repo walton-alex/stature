@@ -1,75 +1,96 @@
 /* Case study detail template. */
 
-.stature-case-study__feature {
-	padding-bottom: 0;
+/*
+ * Feature: the mockup carries its own scene and background, so it simply fills
+ * the frame edge to edge — no padding or backdrop of ours behind it.
+ */
+.stature-case-study__media {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
 }
 
-.stature-case-study__image-panel {
-	position: relative;
-	aspect-ratio: 1152 / 520;
-	border-radius: var(--radius-lg);
-	overflow: hidden;
-	box-shadow: var(--shadow-raised);
+/* Only stands in until a mockup is uploaded. */
+.stature-case-study__placeholder {
+  position: absolute;
+  inset: 0;
+  background: var(--grad-navy);
 }
 
-.stature-case-study__image--placeholder {
-	background: var(--grad-navy);
+.stature-case-study__visit {
+  margin: var(--sp-5) 0 0;
 }
 
-.stature-case-study__scrim {
-	position: absolute;
-	inset: 0;
-	background: linear-gradient(
-		180deg,
-		color-mix(in srgb, var(--navy) 5%, transparent),
-		color-mix(in srgb, var(--navy) 45%, transparent)
-	);
+/* Quiet text link — the same idiom as "View case study →" on the cards. The
+ * hover fade comes from the global `a` rule. */
+.stature-case-study__visit-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  font-size: var(--text-nav);
+  font-weight: var(--w-regular);
+  color: var(--navy);
 }
 
+/* Shown on the stage until a mockup is uploaded. */
 .stature-case-study__caption {
-	position: absolute;
-	left: 1.75rem;
-	bottom: 1.5rem;
-	color: var(--white);
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--white-70);
+}
+
+/*
+ * The stage and the narrative are one continuous case study, so they close up
+ * rather than sitting a full section apart. Nothing hangs below the stage now,
+ * so the feature drops its bottom padding and the narrative sets the single
+ * seam — matching the sp-8 rhythm used between the narrative rows themselves.
+ */
+.stature-case-study__feature {
+  padding-bottom: 0;
+}
+
+.stature-case-study__narrative-section {
+  padding-top: var(--sp-8);
 }
 
 .stature-case-study__narrative {
-	display: grid;
-	gap: var(--sp-8);
+  display: grid;
+  gap: var(--sp-8);
 }
 
 .stature-case-study__row {
-	display: grid;
-	grid-template-columns: 1fr;
-	gap: var(--sp-5);
-	padding-top: var(--sp-6);
-	border-top: var(--border-w) solid var(--navy-12);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sp-5);
+  padding-top: var(--sp-6);
+  border-top: var(--border-w) solid var(--navy-12);
 }
 
 .stature-case-study__row .stature-eyebrow {
-	margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 .stature-case-study__body {
-	margin: 0;
-	max-width: 40rem;
-	font-size: var(--text-lead);
-	font-weight: var(--w-light);
-	line-height: 1.55;
+  max-width: 40rem;
+  color: var(--text-body);
 }
 
 .stature-case-study__testimonial {
-	max-width: calc(47.5rem + var(--sp-7) * 2 + var(--border-w) * 2);
+  max-width: calc(47.5rem + var(--sp-7) * 2 + var(--border-w) * 2);
 }
 
 .stature-case-study__next-section {
-	padding-top: 0;
-	padding-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 @media (min-width: 48.875em) {
-	.stature-case-study__row {
-		grid-template-columns: 16.25rem 1fr;
-		gap: var(--sp-8);
-	}
+  .stature-case-study__row {
+    grid-template-columns: 16.25rem 1fr;
+    gap: var(--sp-8);
+  }
 }

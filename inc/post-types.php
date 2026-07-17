@@ -39,6 +39,23 @@ function stature_register_post_types(): void {
 add_action( 'init', 'stature_register_post_types' );
 
 /**
+ * The most recently published case study.
+ */
+function stature_latest_case_study(): ?WP_Post {
+	$posts = get_posts(
+		array(
+			'post_type'        => 'case_study',
+			'post_status'      => 'publish',
+			'numberposts'      => 1,
+			'orderby'          => array( 'date' => 'DESC', 'ID' => 'DESC' ),
+			'suppress_filters' => false,
+		)
+	);
+
+	return $posts ? $posts[0] : null;
+}
+
+/**
  * The next case study by menu order, wrapping around to the first.
  *
  * @param int $current_id The case study being viewed.

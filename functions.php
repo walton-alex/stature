@@ -14,6 +14,7 @@ require_once get_theme_file_path( 'inc/post-types.php' );
 require_once get_theme_file_path( 'inc/options.php' );
 require_once get_theme_file_path( 'inc/class-stature-header-walker.php' );
 require_once get_theme_file_path( 'inc/template-tags.php' );
+require_once get_theme_file_path( 'inc/scorecard.php' );
 
 function stature_asset_version( string $relative_path ): string {
 	$path = get_theme_file_path( $relative_path );
@@ -90,6 +91,25 @@ function stature_enqueue_assets(): void {
 			stature_asset_version( 'assets/css/gforms.css' )
 		);
 	}
+
+	// Shared shell for the standalone tool pages (scorecard + questionnaire).
+	if ( is_page( array( 'free-scorecard', 'project-questionnaire' ) ) ) {
+		wp_enqueue_style(
+			'stature-tool',
+			get_theme_file_uri( 'assets/css/tool.css' ),
+			array( 'stature-base' ),
+			stature_asset_version( 'assets/css/tool.css' )
+		);
+	}
+
+	if ( is_page( 'free-scorecard' ) ) {
+		wp_enqueue_style(
+			'stature-scorecard',
+			get_theme_file_uri( 'assets/css/scorecard.css' ),
+			array( 'stature-tool' ),
+			stature_asset_version( 'assets/css/scorecard.css' )
+		);
+	}
 }
 add_action( 'wp_enqueue_scripts', 'stature_enqueue_assets' );
 
@@ -139,6 +159,15 @@ function stature_enqueue_script_modules(): void {
 			get_theme_file_uri( 'assets/js/questionnaire.js' ),
 			array( '@stature/utils' ),
 			stature_asset_version( 'assets/js/questionnaire.js' )
+		);
+	}
+
+	if ( is_page( 'free-scorecard' ) ) {
+		wp_enqueue_script_module(
+			'@stature/scorecard',
+			get_theme_file_uri( 'assets/js/scorecard.js' ),
+			array( '@stature/utils' ),
+			stature_asset_version( 'assets/js/scorecard.js' )
 		);
 	}
 }

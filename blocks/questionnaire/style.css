@@ -17,14 +17,12 @@
 .stature-questionnaire__lead {
   max-width: 40rem;
   margin: var(--sp-5) auto 0;
+  font-size: var(--text-base);
   color: var(--text-body);
 }
 
 .stature-questionnaire__meta {
   margin: var(--sp-6) 0 0;
-  font-size: var(--text-small);
-  letter-spacing: var(--tracking-eyebrow);
-  text-transform: uppercase;
 }
 
 .stature-questionnaire__start {

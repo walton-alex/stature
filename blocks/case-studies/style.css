@@ -21,48 +21,38 @@
 	opacity: 1;
 }
 
+/* The mockup carries its own scene, so it fills the frame edge to edge. */
 .stature-case-card__media {
 	position: relative;
-	aspect-ratio: 4 / 3;
+	aspect-ratio: 16 / 10;
 	border-radius: var(--radius-lg);
-	border: var(--border-w) solid var(--navy-12);
 	overflow: hidden;
 }
 
 .stature-case-card--featured .stature-case-card__media {
-	aspect-ratio: 1152 / 540;
+	aspect-ratio: 16 / 9;
 }
 
-.stature-case-card__image--placeholder {
-	background: var(--grad-navy);
-}
-
-.stature-case-card__scrim {
+/* Only stands in until a mockup is uploaded. */
+.stature-case-card__placeholder {
 	position: absolute;
 	inset: 0;
-	background: linear-gradient(
-		180deg,
-		color-mix(in srgb, var(--navy) 5%, transparent),
-		color-mix(in srgb, var(--navy) 55%, transparent)
-	);
+	background: var(--grad-navy);
 }
 
 .stature-case-card__caption {
 	position: absolute;
-	left: 1.25rem;
-	bottom: 1.125rem;
-	color: var(--white);
-}
-
-.stature-case-card--featured .stature-case-card__caption {
-	left: 1.75rem;
-	bottom: 1.5rem;
+	z-index: 1;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	color: var(--white-70);
 }
 
 .stature-case-card__meta {
 	display: flex;
 	align-items: baseline;
-	gap: var(--sp-4);
+	gap: var(--sp-8);
 	padding-top: var(--sp-5);
 }
 

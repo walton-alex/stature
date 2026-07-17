@@ -45,6 +45,7 @@
 }
 
 .stature-hero__panel {
+	display: block;
 	position: relative;
 	width: 100%;
 	max-width: 61.25rem;
@@ -53,6 +54,16 @@
 	overflow: hidden;
 	box-shadow: var(--shadow-raised);
 	aspect-ratio: 980 / 460;
+}
+
+/* When it features a case study the panel is a link. Hold the image steady and
+ * let the caption carry the hover — the same idiom as the case study cards. */
+.stature-hero__panel:hover {
+	opacity: 1;
+}
+
+a.stature-hero__panel:hover .stature-hero__caption {
+	opacity: 0.7;
 }
 
 .stature-hero__image--placeholder {
@@ -76,6 +87,8 @@
 	display: flex;
 	align-items: center;
 	gap: 0.875rem;
+	color: var(--white);
+	transition: opacity var(--dur-fast) var(--ease-out);
 }
 
 .stature-hero__symbol {

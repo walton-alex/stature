@@ -25,8 +25,8 @@ if ( ! $card['post'] instanceof WP_Post ) {
 $case_study = $card['post'];
 $featured   = (bool) $card['featured'];
 $summary    = (string) get_field( 'summary', $case_study->ID );
-$caption    = (string) get_field( 'screens_caption', $case_study->ID );
 $thumb_id   = (int) get_post_thumbnail_id( $case_study->ID );
+$thumb_id   = $thumb_id && wp_attachment_is_image( $thumb_id ) ? $thumb_id : 0;
 $classes    = 'stature-case-card' . ( $featured ? ' stature-case-card--featured' : '' );
 ?>
 <a class="<?php echo esc_attr( $classes ); ?>" href="<?php echo esc_url( (string) get_permalink( $case_study ) ); ?>">
@@ -38,7 +38,7 @@ $classes    = 'stature-case-card' . ( $featured ? ' stature-case-card--featured'
 				$featured ? 'large' : 'medium_large',
 				false,
 				array(
-					'class'   => 'stature-case-card__image stature-cover',
+					'class'   => 'stature-case-card__shot stature-cover',
 					'alt'     => sprintf(
 						/* translators: %s: case study name. */
 						esc_attr__( '%s website', 'stature' ),
@@ -48,15 +48,12 @@ $classes    = 'stature-case-card' . ( $featured ? ' stature-case-card--featured'
 				)
 			);
 		} else {
-			echo '<div class="stature-case-card__image stature-case-card__image--placeholder stature-cover" aria-hidden="true"></div>';
+			?>
+			<div class="stature-case-card__placeholder" aria-hidden="true"></div>
+			<span class="stature-case-card__caption stature-label"><?php esc_html_e( 'Website screens to follow', 'stature' ); ?></span>
+			<?php
 		}
 		?>
-
-		<div class="stature-case-card__scrim" aria-hidden="true"></div>
-
-		<?php if ( '' !== $caption ) : ?>
-			<span class="stature-case-card__caption stature-label"><?php echo esc_html( $caption ); ?></span>
-		<?php endif; ?>
 	</div>
 
 	<div class="stature-case-card__meta">

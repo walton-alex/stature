@@ -22,25 +22,6 @@
       "append": ""
     },
     {
-      "key": "field_stature_cs_screens_caption",
-      "label": "Image caption",
-      "name": "screens_caption",
-      "type": "text",
-      "instructions": "Overlaid on the card image. Clear to hide.",
-      "required": 0,
-      "conditional_logic": 0,
-      "wrapper": {
-        "width": "40",
-        "class": "",
-        "id": ""
-      },
-      "default_value": "Website screens to follow",
-      "maxlength": "",
-      "placeholder": "",
-      "prepend": "",
-      "append": ""
-    },
-    {
       "key": "field_stature_cs_sector",
       "label": "Sector",
       "name": "sector",
@@ -79,11 +60,27 @@
       "append": ""
     },
     {
+      "key": "field_stature_cs_site_url",
+      "label": "Live site URL",
+      "name": "site_url",
+      "type": "url",
+      "instructions": "Adds a \"Visit …\" link beneath the mockups. Leave empty to hide it.",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "50",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "placeholder": ""
+    },
+    {
       "key": "field_stature_cs_challenge",
       "label": "Challenge",
       "name": "challenge",
-      "type": "textarea",
-      "instructions": "",
+      "type": "wysiwyg",
+      "instructions": "Paragraphs, and light formatting.",
       "required": 0,
       "conditional_logic": 0,
       "wrapper": {
@@ -92,17 +89,17 @@
         "id": ""
       },
       "default_value": "",
-      "maxlength": "",
-      "rows": 4,
-      "placeholder": "",
-      "new_lines": ""
+      "tabs": "visual",
+      "toolbar": "basic",
+      "media_upload": 0,
+      "delay": 0
     },
     {
       "key": "field_stature_cs_approach",
       "label": "Approach",
       "name": "approach",
-      "type": "textarea",
-      "instructions": "",
+      "type": "wysiwyg",
+      "instructions": "Paragraphs, and light formatting.",
       "required": 0,
       "conditional_logic": 0,
       "wrapper": {
@@ -111,17 +108,17 @@
         "id": ""
       },
       "default_value": "",
-      "maxlength": "",
-      "rows": 4,
-      "placeholder": "",
-      "new_lines": ""
+      "tabs": "visual",
+      "toolbar": "basic",
+      "media_upload": 0,
+      "delay": 0
     },
     {
       "key": "field_stature_cs_result",
       "label": "Result",
       "name": "result",
-      "type": "textarea",
-      "instructions": "",
+      "type": "wysiwyg",
+      "instructions": "Paragraphs, and light formatting.",
       "required": 0,
       "conditional_logic": 0,
       "wrapper": {
@@ -130,10 +127,10 @@
         "id": ""
       },
       "default_value": "",
-      "maxlength": "",
-      "rows": 4,
-      "placeholder": "",
-      "new_lines": ""
+      "tabs": "visual",
+      "toolbar": "basic",
+      "media_upload": 0,
+      "delay": 0
     },
     {
       "key": "field_stature_cs_testimonial_quote",
@@ -192,5 +189,5 @@
   "active": true,
   "description": "Fields for a case study.",
   "show_in_rest": 0,
-  "modified": 1783604396
+  "modified": 1784042694
 }

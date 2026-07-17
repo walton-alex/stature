@@ -15,8 +15,19 @@ while ( have_posts() ) :
 	$case_id  = get_the_ID();
 	$sector   = (string) get_field( 'sector' );
 	$scope    = (string) get_field( 'scope' );
-	$caption  = (string) get_field( 'screens_caption' );
 	$thumb_id = (int) get_post_thumbnail_id( $case_id );
+	$site_url = (string) get_field( 'site_url' );
+
+	// An id can outlive its attachment; only treat it as an image if it still is one.
+	$thumb_id = $thumb_id && wp_attachment_is_image( $thumb_id ) ? $thumb_id : 0;
+
+	// Label the link with the bare domain — more concrete than "the live site".
+	$site_host = '';
+
+	if ( '' !== $site_url ) {
+		$host      = wp_parse_url( $site_url, PHP_URL_HOST );
+		$site_host = is_string( $host ) ? (string) preg_replace( '/^www\./', '', $host ) : '';
+	}
 
 	$badges = array();
 
@@ -48,7 +59,7 @@ while ( have_posts() ) :
 
 	<section class="stature-case-study__feature stature-section stature-section--white">
 		<div class="stature-container stature-section__inner">
-			<div class="stature-case-study__image-panel">
+			<div class="stature-case-study__media">
 				<?php
 				if ( $thumb_id ) {
 					echo wp_get_attachment_image(
@@ -56,36 +67,56 @@ while ( have_posts() ) :
 						'full',
 						false,
 						array(
-							'class' => 'stature-case-study__image stature-cover',
+							'class' => 'stature-case-study__shot stature-cover',
 							'alt'   => sprintf(
 								/* translators: %s: case study name. */
-								esc_attr__( '%s website', 'stature' ),
+								esc_attr__( '%s website — desktop', 'stature' ),
 								get_the_title()
 							),
 						)
 					);
 				} else {
-					echo '<div class="stature-case-study__image stature-case-study__image--placeholder stature-cover" aria-hidden="true"></div>';
+					?>
+					<div class="stature-case-study__placeholder" aria-hidden="true"></div>
+					<span class="stature-case-study__caption stature-label"><?php esc_html_e( 'Desktop screens to follow', 'stature' ); ?></span>
+					<?php
 				}
 				?>
-
-				<div class="stature-case-study__scrim" aria-hidden="true"></div>
-
-				<?php if ( '' !== $caption ) : ?>
-					<span class="stature-case-study__caption stature-label"><?php echo esc_html( $caption ); ?></span>
-				<?php endif; ?>
 			</div>
+			<?php if ( '' !== $site_url ) : ?>
+				<p class="stature-case-study__visit">
+					<a
+						class="stature-case-study__visit-link"
+						href="<?php echo esc_url( $site_url ); ?>"
+						target="_blank"
+						rel="noopener"
+					>
+						<?php
+						if ( '' !== $site_host ) {
+							printf(
+								/* translators: %s: the case study's domain, e.g. vero.co.uk. */
+								esc_html__( 'Visit %s', 'stature' ),
+								esc_html( $site_host )
+							);
+						} else {
+							esc_html_e( 'Visit the live site', 'stature' );
+						}
+						?>
+						<span class="stature-btn__arrow" aria-hidden="true">&rarr;</span>
+					</a>
+				</p>
+			<?php endif; ?>
 		</div>
 	</section>
 
 	<?php if ( $rows ) : ?>
-		<section class="stature-section stature-section--white">
+		<section class="stature-case-study__narrative-section stature-section stature-section--white">
 			<div class="stature-container stature-section__inner">
 				<div class="stature-case-study__narrative">
 					<?php foreach ( $rows as $row ) : ?>
 						<div class="stature-case-study__row">
 							<?php get_template_part( 'parts/eyebrow', null, array( 'text' => $row['label'] ) ); ?>
-							<p class="stature-case-study__body"><?php echo esc_html( $row['body'] ); ?></p>
+							<div class="stature-case-study__body stature-prose"><?php echo wp_kses_post( $row['body'] ); ?></div>
 						</div>
 					<?php endforeach; ?>
 				</div>

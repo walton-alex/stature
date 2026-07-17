@@ -43,8 +43,15 @@ $form_dom = 'stature-questionnaire-form';
 				<p class="stature-questionnaire__lead stature-lead"><?php echo esc_html( $lead ); ?></p>
 			<?php endif; ?>
 
-			<?php if ( '' !== $meta ) : ?>
-				<p class="stature-questionnaire__meta"><?php echo esc_html( $meta ); ?></p>
+			<?php
+			if ( '' !== $meta ) :
+				$meta_items = array_filter( array_map( 'trim', (array) preg_split( '/\s*[·•|]\s*/u', $meta ) ) );
+				?>
+				<div class="stature-tool-meta stature-questionnaire__meta">
+					<?php foreach ( $meta_items as $meta_item ) : ?>
+						<span class="stature-tool-meta__item"><?php echo esc_html( $meta_item ); ?></span>
+					<?php endforeach; ?>
+				</div>
 			<?php endif; ?>
 
 			<?php if ( $form_id > 0 && function_exists( 'gravity_form' ) ) : ?>
