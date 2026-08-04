@@ -1,0 +1,43 @@
+/*
+ * Contact block: intro column beside a panelled Gravity Form. The form's own
+ * styling is shared — see assets/css/gforms.css (.stature-gform).
+ */
+
+.stature-contact__grid {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: var(--sp-7);
+}
+
+.stature-contact__heading {
+	margin: 0;
+}
+
+.stature-contact__body {
+	margin-top: var(--sp-5);
+	color: var(--text-body);
+}
+
+.stature-contact__intro .stature-testimonial {
+	margin-top: var(--sp-7);
+}
+
+.stature-contact__panel {
+	padding: var(--sp-7);
+	border: var(--border-w) solid var(--navy-12);
+	border-radius: var(--radius-lg);
+	background: var(--white);
+}
+
+.stature-contact__placeholder {
+	margin: 0;
+	color: var(--text-muted);
+}
+
+@media (min-width: 64em) {
+	.stature-contact__grid {
+		grid-template-columns: 1fr 1.1fr;
+		gap: var(--sp-9);
+		align-items: start;
+	}
+}

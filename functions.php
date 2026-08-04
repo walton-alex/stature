@@ -134,44 +134,45 @@ function stature_enqueue_block_styles( array $block_names ): void {
 	}
 }
 
-function stature_enqueue_script_modules(): void {
-	if ( ! function_exists( 'wp_enqueue_script_module' ) ) {
-		return;
-	}
-
-	wp_register_script_module(
-		'@stature/utils',
-		get_theme_file_uri( 'assets/js/utils.js' ),
-		array(),
-		stature_asset_version( 'assets/js/utils.js' )
+/**
+ * The scripts are built by Parcel: shared utils are inlined into each bundle, so
+ * they load as ordinary deferred scripts rather than ES modules + an import map.
+ */
+function stature_enqueue_scripts(): void {
+	$args = array(
+		'in_footer' => true,
+		'strategy'  => 'defer',
 	);
 
-	wp_enqueue_script_module(
-		'@stature/header',
+	wp_enqueue_script(
+		'stature-header',
 		get_theme_file_uri( 'assets/js/header.js' ),
-		array( '@stature/utils' ),
-		stature_asset_version( 'assets/js/header.js' )
+		array(),
+		stature_asset_version( 'assets/js/header.js' ),
+		$args
 	);
 
 	if ( is_singular() && has_block( 'stature/questionnaire', get_queried_object_id() ) ) {
-		wp_enqueue_script_module(
-			'@stature/questionnaire',
+		wp_enqueue_script(
+			'stature-questionnaire',
 			get_theme_file_uri( 'assets/js/questionnaire.js' ),
-			array( '@stature/utils' ),
-			stature_asset_version( 'assets/js/questionnaire.js' )
+			array(),
+			stature_asset_version( 'assets/js/questionnaire.js' ),
+			$args
 		);
 	}
 
 	if ( is_page( 'free-scorecard' ) ) {
-		wp_enqueue_script_module(
-			'@stature/scorecard',
+		wp_enqueue_script(
+			'stature-scorecard',
 			get_theme_file_uri( 'assets/js/scorecard.js' ),
-			array( '@stature/utils' ),
-			stature_asset_version( 'assets/js/scorecard.js' )
+			array(),
+			stature_asset_version( 'assets/js/scorecard.js' ),
+			$args
 		);
 	}
 }
-add_action( 'wp_enqueue_scripts', 'stature_enqueue_script_modules' );
+add_action( 'wp_enqueue_scripts', 'stature_enqueue_scripts' );
 
 function stature_block_category( array $categories ): array {
 	array_unshift(

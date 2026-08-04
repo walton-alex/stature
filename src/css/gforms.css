@@ -1,0 +1,320 @@
+/*
+ * Shared Gravity Forms theming for any block that hosts a form (contact,
+ * questionnaire). Applied via a `.stature-gform` wrapper class.
+ *
+ * Gravity Forms' Orbital theme is driven by custom properties, so the form is
+ * restyled by remapping those onto Stature's tokens rather than overriding its
+ * rules. Override the properties it reads (--gf-ctrl-*), never the --gf-local-*
+ * ones it writes onto each element, or its own rules win. Where Gravity Forms
+ * re-declares a variable in its id-scoped inline block (which outranks a class
+ * selector) the resulting property is set directly at three-class specificity.
+ */
+
+.stature-gform .gform_wrapper.gform-theme--framework {
+	--gf-ctrl-font-family: var(--font-sans);
+	--gf-ctrl-font-size: 0.9375rem;
+	--gf-ctrl-font-weight: var(--w-book);
+	--gf-ctrl-padding-x: 1rem;
+	--gf-ctrl-padding-y: 0;
+	--gf-ctrl-radius: var(--radius-sm);
+	--gf-ctrl-size: 2.875rem;
+	--gf-ctrl-size-md: 2.875rem;
+	--gf-ctrl-border-width: var(--border-w);
+	--gf-ctrl-border-color: var(--navy-40);
+	--gf-ctrl-border-color-hover: var(--navy-40);
+	--gf-ctrl-border-color-focus: var(--navy);
+	--gf-ctrl-outline-color-focus: var(--navy-40);
+	--gf-ctrl-bg-color: var(--white);
+	--gf-ctrl-bg-color-hover: var(--white);
+	--gf-ctrl-bg-color-focus: var(--white);
+	--gf-ctrl-accent-color: var(--navy);
+	--gf-ctrl-icon-color: var(--navy);
+	--gf-ctrl-icon-color-hover: var(--navy);
+	--gf-ctrl-icon-color-focus: var(--navy);
+	--gf-ctrl-select-icon-size: 0.75rem;
+	--gf-ctrl-select-padding-x: 1rem 2.5rem;
+
+	/*
+	 * Gravity Forms re-emits the primary colour in a per-form inline <style>
+	 * scoped by id, which outranks a class selector — so the accent (checkbox
+	 * ticks, radio dots and anything else keyed to primary) stays GF blue unless
+	 * these are forced. !important is the only lever that beats the id block.
+	 */
+	--gf-color-primary: var(--navy) !important;
+	--gf-color-primary-darker: var(--navy-700) !important;
+	--gf-color-primary-lighter: var(--navy-700) !important;
+	--gf-color-in-ctrl-primary: var(--navy) !important;
+	--gf-color-in-ctrl-primary-darker: var(--navy-700) !important;
+	--gf-color-in-ctrl-primary-lighter: var(--navy-700) !important;
+	--gf-ctrl-choice-check-color: var(--navy);
+
+	--gf-color-primary-contrast: var(--white);
+	--gf-color-in-ctrl-contrast: var(--navy);
+	--gf-ctrl-label-color-primary: var(--navy);
+
+	--gf-label-space-primary: var(--sp-2);
+
+	--gf-form-gap-x: var(--sp-5);
+	--gf-form-gap-y: var(--sp-5);
+
+	--gf-ctrl-btn-font-family: var(--font-sans);
+	--gf-ctrl-btn-font-size: 0.9375rem;
+	--gf-ctrl-btn-font-size-md: 0.9375rem;
+	--gf-ctrl-btn-font-weight: var(--w-regular);
+	--gf-ctrl-btn-padding-x: 1.625rem;
+	--gf-ctrl-btn-padding-x-md: 1.625rem;
+	--gf-ctrl-btn-radius: var(--radius-pill);
+	--gf-ctrl-btn-size: 2.5625rem;
+	--gf-ctrl-btn-size-md: 2.5625rem;
+	--gf-ctrl-btn-bg-color-primary: var(--navy);
+	--gf-ctrl-btn-bg-color-hover-primary: var(--navy-700);
+	--gf-ctrl-btn-bg-color-focus-primary: var(--navy);
+	--gf-ctrl-btn-color-primary: var(--white);
+	--gf-ctrl-btn-color-hover-primary: var(--white);
+	--gf-ctrl-btn-border-color-primary: var(--navy);
+	--gf-ctrl-btn-border-color-hover-primary: var(--navy-700);
+	/* The "Back" button mirrors .stature-btn--secondary: a navy-12 border in both
+	 * states, a transparent fill that tints to navy-08 on hover, navy text
+	 * throughout. Gravity Forms re-emits the resting border colour in its id
+	 * block, so the border needs !important to hold in both states. */
+	--gf-ctrl-btn-bg-color-secondary: transparent;
+	--gf-ctrl-btn-bg-color-hover-secondary: var(--navy-08);
+	--gf-ctrl-btn-bg-color-focus-secondary: transparent;
+	--gf-ctrl-btn-color-secondary: var(--navy);
+	--gf-ctrl-btn-color-hover-secondary: var(--navy);
+	--gf-ctrl-btn-border-color-secondary: var(--navy-12) !important;
+	--gf-ctrl-btn-border-color-hover-secondary: var(--navy-12) !important;
+
+	--gf-field-pg-steps-number-size: 1.875rem;
+	--gf-field-pg-steps-number-border-width: var(--border-w);
+	--gf-field-pg-steps-number-border-color: var(--navy-12);
+	--gf-field-pg-steps-number-bg-color: transparent;
+	--gf-field-pg-steps-number-color: var(--navy-40);
+	--gf-field-pg-steps-number-bg-color-active: var(--navy);
+	--gf-field-pg-steps-number-border-color-active: var(--navy);
+	--gf-field-pg-steps-number-color-active: var(--white);
+	--gf-field-pg-steps-number-bg-color-complete: var(--navy);
+	--gf-field-pg-steps-number-border-color-complete: var(--navy);
+	--gf-field-pg-steps-number-color-complete: var(--white);
+	--gf-field-pg-steps-step-gap: 0.625rem;
+	--gf-field-pg-steps-gap-x: var(--sp-3);
+	--gf-field-pg-steps-gap-y: var(--sp-3);
+
+	--gf-field-pg-prog-bar-bg-color-blue: var(--navy);
+	--gf-field-pg-prog-color: var(--navy-80);
+
+	--gf-field-section-border-color: var(--navy-12);
+	--gf-ctrl-label-color-req: var(--red);
+
+	--gf-ctrl-border-color-error: var(--red);
+	--gf-form-validation-color: var(--red);
+	--gf-form-validation-heading-color: var(--red);
+	--gf-form-validation-summary-color: var(--red);
+
+	--gf-ctrl-placeholder-color: var(--navy-60);
+	--gf-form-spinner-fg-color: var(--navy);
+	--gf-form-spinner-bg-color: var(--navy-12);
+}
+
+.stature-gform .gform_wrapper {
+	margin: 0;
+}
+
+.stature-gform .gform_wrapper .gfield input,
+.stature-gform .gform_wrapper .gfield select,
+.stature-gform .gform_wrapper .gfield textarea {
+	color: var(--navy);
+	border-color: var(--navy-40);
+}
+
+.stature-gform .gform_wrapper .gfield input:focus,
+.stature-gform .gform_wrapper .gfield select:focus,
+.stature-gform .gform_wrapper .gfield textarea:focus {
+	border-color: var(--navy);
+}
+
+/* Placeholders read as hints, not typed text — muted but still legible. */
+.stature-gform .gform_wrapper .gfield input::placeholder,
+.stature-gform .gform_wrapper .gfield textarea::placeholder {
+	color: var(--navy-60);
+	opacity: 1;
+}
+
+.stature-gform .gform_wrapper .gfield textarea {
+	padding-block: 0.75rem;
+	line-height: 1.5;
+}
+
+.stature-gform .gform_wrapper .gfield_label {
+	color: var(--navy);
+}
+
+/* Required marker and field descriptions: muted, on-brand — not the default red/grey.
+ * The colour comes from --gf-ctrl-label-color-req above; this sets the weight. */
+.stature-gform .gform_wrapper .gfield_required {
+	font-weight: var(--w-book);
+}
+
+.stature-gform .gform_wrapper .gfield_description {
+	color: var(--navy-80);
+}
+
+/* Validation: the message and the errored field's border turn red.
+ * The message also carries .gfield_description, so this must follow that rule. */
+.stature-gform .gform_wrapper .gfield_validation_message,
+.stature-gform .gform_wrapper .validation_message {
+	color: var(--red);
+}
+
+.stature-gform .gform_wrapper .gfield.gfield_error input,
+.stature-gform .gform_wrapper .gfield.gfield_error select,
+.stature-gform .gform_wrapper .gfield.gfield_error textarea {
+	border-color: var(--red);
+}
+
+/* Section headings within a form: the section name set as an eyebrow (with the
+ * skewed marker used elsewhere), above a hairline. */
+.stature-gform .gform_wrapper .gsection {
+	margin-bottom: var(--sp-4);
+	padding-bottom: var(--sp-3);
+}
+
+.stature-gform .gform_wrapper .gsection_title {
+	display: flex;
+	align-items: center;
+	gap: 0.625rem;
+	margin-bottom: 0;
+	font-family: var(--font-sans);
+	font-size: var(--text-eyebrow);
+	font-weight: var(--w-regular);
+	letter-spacing: var(--tracking-eyebrow);
+	text-transform: uppercase;
+	color: var(--navy-80);
+}
+
+.stature-gform .gform_wrapper .gsection_title::before {
+	content: "";
+	flex-shrink: 0;
+	width: 0.875rem;
+	height: 0.5rem;
+	background: var(--navy);
+	transform: skewX(-15deg);
+}
+
+.stature-gform .gform_wrapper .gform_page_footer {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	gap: var(--sp-4);
+	margin-top: var(--sp-6);
+	padding: 0;
+	border: 0;
+}
+
+.stature-gform .gform_wrapper .gform_previous_button {
+	margin-right: auto;
+}
+
+.stature-gform .gform_wrapper .gform_confirmation_message {
+	padding: var(--sp-6) 0;
+	text-align: center;
+}
+
+.stature-gform .gform_wrapper .gform_confirmation_message h2 {
+	margin: 0;
+	font-size: var(--text-h4);
+	font-weight: var(--w-regular);
+	line-height: var(--leading-heading);
+	color: var(--navy);
+}
+
+.stature-gform .gform_wrapper .gform_confirmation_message p {
+	margin: var(--sp-3) 0 0;
+	color: var(--text-body);
+}
+
+/* Steps pagination (used when a form's progress indicator is "steps"). */
+.stature-gform .gform_wrapper .gf_step_pending .gf_step_number {
+	color: var(--navy-40);
+}
+
+.stature-gform .gform_wrapper .gf_page_steps {
+	align-items: center;
+	margin-bottom: var(--sp-6);
+	border: 0;
+	padding: 0;
+}
+
+.stature-gform .gform_wrapper .gf_step {
+	align-items: center;
+}
+
+.stature-gform .gform_wrapper .gf_step:not(.gf_step_last) {
+	flex: 1;
+}
+
+.stature-gform .gform_wrapper .gf_step:not(.gf_step_last)::after {
+	content: "";
+	flex: 1;
+	height: var(--border-w);
+	margin-left: var(--sp-3);
+	background: var(--navy-12);
+	transition: background var(--dur-med) var(--ease-out);
+}
+
+.stature-gform .gform_wrapper .gf_step_completed:not(.gf_step_last)::after {
+	background: var(--navy);
+}
+
+.stature-gform .gform_wrapper .gf_step_number {
+	font-size: var(--text-eyebrow);
+	font-weight: var(--w-regular);
+}
+
+.stature-gform .gform_wrapper .gf_step_label {
+	font-size: var(--text-eyebrow);
+	font-weight: var(--w-book);
+	color: var(--navy-40);
+	white-space: nowrap;
+}
+
+.stature-gform .gform_wrapper .gf_step_active .gf_step_label {
+	font-weight: var(--w-regular);
+	color: var(--navy);
+}
+
+/* Percentage progress bar (used when a form's progress indicator is "percentage"). */
+.stature-gform .gform_wrapper .gf_progressbar_wrapper {
+	margin-bottom: var(--sp-6);
+	padding: 0;
+}
+
+.stature-gform .gform_wrapper .gf_progressbar_title {
+	margin-bottom: var(--sp-3);
+	font-size: var(--text-eyebrow);
+	font-weight: var(--w-regular);
+	letter-spacing: var(--tracking-eyebrow);
+	text-transform: uppercase;
+	color: var(--navy-80);
+}
+
+.stature-gform .gform_wrapper .gf_progressbar {
+	height: 0.5rem;
+	padding: 0;
+	overflow: hidden;
+	border-radius: var(--radius-pill);
+	background: var(--navy-12);
+	box-shadow: none;
+}
+
+.stature-gform .gform_wrapper .gf_progressbar_percentage {
+	height: 100%;
+	line-height: 0;
+	border-radius: 0;
+	background: var(--navy);
+	transition: width var(--dur-med) var(--ease-out);
+}
+
+.stature-gform .gform_wrapper .gf_progressbar_percentage span {
+	display: none;
+}

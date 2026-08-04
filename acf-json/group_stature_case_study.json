@@ -152,11 +152,30 @@
       "new_lines": ""
     },
     {
+      "key": "field_stature_cs_testimonial_snapshot",
+      "label": "Testimonial snapshot",
+      "name": "testimonial_snapshot",
+      "type": "textarea",
+      "instructions": "Optional. A short version of the quote for the homepage hero — a sentence or two. Without one the hero trims the full quote above.",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "maxlength": "",
+      "rows": 2,
+      "placeholder": "",
+      "new_lines": ""
+    },
+    {
       "key": "field_stature_cs_testimonial_attribution",
       "label": "Testimonial attribution",
       "name": "testimonial_attribution",
       "type": "text",
-      "instructions": "",
+      "instructions": "Plain text, or an inline link — e.g. <a href=\"https://linkedin.com/in/name\" target=\"_blank\" rel=\"noopener\">Elliot</a>, Vero",
       "required": 0,
       "conditional_logic": 0,
       "wrapper": {
@@ -189,5 +208,5 @@
   "active": true,
   "description": "Fields for a case study.",
   "show_in_rest": 0,
-  "modified": 1784042694
+  "modified": 1785839479
 }

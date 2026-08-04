@@ -14,7 +14,7 @@ defined( 'ABSPATH' ) || exit;
 $eyebrow     = (string) get_field( 'eyebrow' );
 $quote       = (string) get_field( 'quote' );
 $highlight   = (string) get_field( 'highlight' );
-$attribution = (string) get_field( 'attribution' );
+$attribution = stature_attribution_html( (string) get_field( 'attribution' ) );
 $motif       = get_field( 'motif' );
 
 $classes = stature_section_classes( $block, 'stature-quote-stats', 'navy' );
@@ -64,8 +64,8 @@ if ( '' !== $highlight && str_contains( $quote, $highlight ) ) {
 					</blockquote>
 				<?php endif; ?>
 
-				<?php if ( '' !== $attribution ) : ?>
-					<div class="stature-quote-stats__attribution"><?php echo esc_html( $attribution ); ?></div>
+				<?php if ( '' !== trim( $attribution ) ) : ?>
+					<div class="stature-quote-stats__attribution"><?php echo $attribution; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Sanitised by stature_attribution_html(). ?></div>
 				<?php endif; ?>
 			</div>
 

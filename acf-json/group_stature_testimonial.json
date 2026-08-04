@@ -51,7 +51,7 @@
       "label": "Attribution",
       "name": "attribution",
       "type": "text",
-      "instructions": "",
+      "instructions": "Plain text, or an inline link — e.g. <a href=\"https://linkedin.com/in/name\" target=\"_blank\" rel=\"noopener\">Elliot</a>, Vero",
       "required": 0,
       "conditional_logic": 0,
       "wrapper": {
@@ -84,5 +84,5 @@
   "active": true,
   "description": "Fields for the Testimonial block.",
   "show_in_rest": 0,
-  "modified": 1783604396
+  "modified": 1785839479
 }

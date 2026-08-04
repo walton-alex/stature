@@ -1,0 +1,463 @@
+/*
+ * Website Credibility Scorecard — standalone tool page.
+ *
+ * Aligns with the Stature system: the tool sits in a bordered white card on a
+ * cool-grey surface (matching the questionnaire form), reuses .stature-eyebrow
+ * and .stature-heading, and echoes the site's navy CTA banner. Semantic status
+ * colours (red / amber / blue / green) are required by the brief for the bars
+ * and band badges; they are scoped here so they don't leak into the brand
+ * system, which otherwise avoids semantic colour.
+ */
+
+/* ---- Layout ---- */
+/*
+ * Status colours. Red is the brand's own token; amber/blue/green have no brand
+ * equivalent and exist only because the brief requires a colour-coded scale, so
+ * they stay scoped here. Text on the tints is mixed toward navy — it ties the
+ * scale back to the palette and carries the contrast.
+ */
+.stature-scorecard {
+	--sc-red: var(--red);
+	--sc-amber: #a5670a;
+	--sc-blue: #2f6f8f;
+	--sc-green: #2e7d4f;
+
+	padding: var(--sp-6) var(--container-pad-x) var(--sp-10);
+}
+
+.stature-scorecard__noscript {
+	max-width: 40rem;
+	margin: 0 auto;
+	color: var(--text-body);
+}
+
+/* Intro splash — centred, mirroring the questionnaire intro exactly. */
+.sc-intro {
+	max-width: 45rem;
+	margin: 0 auto;
+	padding: var(--sp-5) 0 var(--sp-8);
+	text-align: center;
+}
+
+.sc-intro .stature-eyebrow {
+	justify-content: center;
+}
+
+.sc-intro__heading {
+	margin: 0;
+}
+
+.sc-intro__lead {
+	max-width: 40rem;
+	margin: var(--sp-5) auto 0;
+	font-size: var(--text-base);
+	color: var(--text-body);
+}
+
+.sc-intro__meta {
+	margin: var(--sp-6) 0 0;
+}
+
+.sc-intro__start {
+	margin-top: var(--sp-6);
+}
+
+/* Card — matches .stature-questionnaire__form. */
+.sc-card {
+	max-width: calc(44rem + var(--sp-7) * 2 + var(--border-w) * 2);
+	margin: 0 auto;
+	padding: var(--sp-7);
+	border: var(--border-w) solid var(--navy-12);
+	border-radius: var(--radius-lg);
+	background: var(--white);
+}
+
+.sc-heading {
+	margin: 0 0 var(--sp-4);
+}
+
+.sc-lead {
+	font-size: var(--text-base);
+	line-height: var(--leading-body);
+	color: var(--text-body);
+	margin: 0 0 var(--sp-3);
+}
+
+.sc-sublabel {
+	margin-bottom: var(--sp-4);
+}
+
+/* ---- In-form section header (matches the questionnaire's Gravity Form) ---- */
+/*
+ * Plain uppercase label — the questionnaire's gf_progressbar_title treatment.
+ * Used for the step counter and for the section labels on the results screen so
+ * every label in both tools reads the same.
+ */
+.sc-step-label,
+.sc-sublabel {
+	font-family: var(--font-sans);
+	font-size: var(--text-eyebrow);
+	font-weight: var(--w-regular);
+	letter-spacing: var(--tracking-eyebrow);
+	text-transform: uppercase;
+	color: var(--navy-80);
+}
+
+.sc-step-label {
+	margin-bottom: var(--sp-3);
+}
+
+.sc-progress {
+	height: 0.5rem;
+	background: var(--navy-12);
+	border-radius: var(--radius-pill);
+	overflow: hidden;
+	margin-bottom: var(--sp-6);
+}
+
+.sc-progress__fill {
+	display: block;
+	height: 100%;
+	background: var(--navy);
+	border-radius: var(--radius-pill);
+	transition: width var(--dur-med) var(--ease-out);
+}
+
+.sc-section-title {
+	margin-bottom: var(--sp-5);
+	padding-bottom: var(--sp-3);
+	border-bottom: var(--border-w) solid var(--navy-12);
+}
+
+/* ---- Questions ---- */
+.sc-questions {
+	display: flex;
+	flex-direction: column;
+	gap: var(--sp-6);
+	margin: 0;
+}
+
+/* Question label — matches the questionnaire's Gravity Form field labels. */
+.sc-question {
+	font-size: var(--text-small);
+	font-weight: var(--w-regular);
+	line-height: var(--leading-body);
+	color: var(--navy);
+	margin: 0 0 var(--sp-3);
+}
+
+.sc-options {
+	display: flex;
+	flex-direction: column;
+	gap: var(--sp-2);
+}
+
+.sc-option {
+	display: flex;
+	align-items: center;
+	gap: var(--sp-3);
+	width: 100%;
+	padding: 0.875rem 1rem;
+	border: var(--border-w) solid var(--navy-40);
+	border-radius: var(--radius-sm);
+	background: var(--white);
+	font-family: var(--font-sans);
+	text-align: left;
+	cursor: pointer;
+	transition:
+		border-color var(--dur-fast) var(--ease-out),
+		background var(--dur-fast) var(--ease-out);
+}
+
+.sc-option:hover {
+	border-color: var(--navy);
+	background: var(--cool-grey);
+}
+
+.sc-option.is-selected {
+	border-color: var(--navy);
+	background: var(--navy-08);
+}
+
+.sc-option__dot {
+	flex-shrink: 0;
+	width: 1.125rem;
+	height: 1.125rem;
+	border-radius: 50%;
+	border: 1.5px solid var(--navy-40);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: border-color var(--dur-fast) var(--ease-out);
+}
+
+.sc-option.is-selected .sc-option__dot {
+	border-color: var(--navy);
+	background: var(--navy);
+}
+
+.sc-option.is-selected .sc-option__dot::after {
+	content: "";
+	width: 0.375rem;
+	height: 0.375rem;
+	border-radius: 50%;
+	background: var(--white);
+}
+
+.sc-option__text {
+	font-size: 0.9375rem;
+	color: var(--navy);
+}
+
+/* ---- Navigation ---- */
+.sc-nav {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	gap: var(--sp-4);
+	margin-top: var(--sp-6);
+}
+
+/* Back sits left when it's there; on the first section it isn't, and the
+ * primary button still holds the right. */
+.sc-nav .stature-btn--secondary {
+	margin-right: auto;
+}
+
+.stature-scorecard .stature-btn[disabled] {
+	opacity: 0.4;
+	cursor: not-allowed;
+	pointer-events: none;
+}
+
+/* ---- Gate ---- */
+.sc-field {
+	display: flex;
+	flex-direction: column;
+	gap: 0.375rem;
+	margin-bottom: var(--sp-4);
+}
+
+/* Matches the questionnaire's gfield_label. */
+.sc-field label {
+	font-size: var(--text-small);
+	font-weight: var(--w-regular);
+	color: var(--navy);
+}
+
+.sc-field input {
+	width: 100%;
+	padding: 0.75rem 1rem;
+	border: var(--border-w) solid var(--navy-40);
+	border-radius: var(--radius-sm);
+	font-family: var(--font-sans);
+	font-size: 0.9375rem;
+	color: var(--navy);
+	background: var(--white);
+}
+
+/* Matches --gf-ctrl-placeholder-color on the questionnaire's form. */
+.sc-field input::placeholder {
+	color: var(--navy-60);
+}
+
+.sc-field input:focus-visible {
+	outline: 2px solid var(--navy);
+	outline-offset: 1px;
+	border-color: var(--navy);
+}
+
+.sc-fineprint {
+	font-size: var(--text-small);
+	color: var(--navy-80);
+	margin-top: var(--sp-2);
+}
+
+.sc-error {
+	margin-top: var(--sp-3);
+	padding: 0.625rem 0.875rem;
+	border-radius: var(--radius-md);
+	background: color-mix(in srgb, var(--sc-red) 10%, var(--white));
+	color: var(--sc-red);
+	font-size: var(--text-small);
+}
+
+/* ---- Results ---- */
+.sc-score {
+	display: flex;
+	align-items: baseline;
+	gap: 0.5rem;
+	margin: var(--sp-5) 0 var(--sp-4);
+}
+
+.sc-score__value {
+	font-size: var(--text-display);
+	font-weight: var(--w-medium);
+	line-height: 1;
+	color: var(--navy);
+}
+
+.sc-score__max {
+	font-size: var(--text-h4);
+	color: var(--navy-60);
+}
+
+.sc-band {
+	display: inline-block;
+	padding: 0.25rem 0.75rem;
+	border-radius: var(--radius-pill);
+	font-size: var(--text-small);
+	font-weight: var(--w-medium);
+	margin-bottom: var(--sp-5);
+}
+
+.sc-band--critical {
+	background: color-mix(in srgb, var(--sc-red) 12%, var(--white));
+	color: color-mix(in srgb, var(--sc-red) 70%, var(--navy));
+}
+
+.sc-band--developing {
+	background: color-mix(in srgb, var(--sc-amber) 14%, var(--white));
+	color: color-mix(in srgb, var(--sc-amber) 70%, var(--navy));
+}
+
+.sc-band--strong {
+	background: color-mix(in srgb, var(--sc-blue) 14%, var(--white));
+	color: color-mix(in srgb, var(--sc-blue) 70%, var(--navy));
+}
+
+.sc-band--excellent {
+	background: color-mix(in srgb, var(--sc-green) 14%, var(--white));
+	color: color-mix(in srgb, var(--sc-green) 70%, var(--navy));
+}
+
+.sc-band-msg {
+	font-size: var(--text-base);
+	line-height: var(--leading-body);
+	color: var(--text-body);
+	margin-bottom: var(--sp-7);
+	padding: var(--sp-4) var(--sp-5);
+	background: var(--cool-grey);
+	border-radius: var(--radius-md);
+}
+
+.sc-breakdown {
+	margin-top: var(--sp-4);
+}
+
+.sc-dim-row {
+	display: grid;
+	grid-template-columns: 13rem 1fr auto;
+	align-items: center;
+	gap: var(--sp-4);
+	margin-bottom: 0.75rem;
+}
+
+/* A row label, so it carries the same weight as the form's field labels. */
+.sc-dim-name {
+	font-size: var(--text-small);
+	font-weight: var(--w-regular);
+	color: var(--navy);
+}
+
+.sc-dim-track {
+	height: 0.375rem;
+	background: var(--navy-08);
+	border-radius: var(--radius-pill);
+	overflow: hidden;
+}
+
+.sc-dim-fill {
+	display: block;
+	height: 100%;
+	border-radius: var(--radius-pill);
+	background: var(--sc-blue);
+	transition: width var(--dur-med) var(--ease-out);
+}
+
+.sc-dim-fill--low {
+	background: var(--sc-red);
+}
+
+.sc-dim-fill--mid {
+	background: var(--sc-amber);
+}
+
+.sc-dim-score {
+	font-size: var(--text-small);
+	color: var(--navy-80);
+	text-align: right;
+	min-width: 2.5rem;
+}
+
+.sc-rule {
+	border: none;
+	border-top: var(--border-w) solid var(--navy-12);
+	margin: var(--sp-7) 0;
+}
+
+.sc-weakest {
+	font-size: var(--text-base);
+	line-height: var(--leading-body);
+	color: var(--text-body);
+	margin: 0 0 var(--sp-7);
+}
+
+.sc-weakest strong {
+	color: var(--navy);
+	font-weight: var(--w-medium);
+}
+
+/* CTA — echoes the site's navy CTA banner. */
+.sc-cta {
+	padding: var(--sp-6);
+	border-radius: var(--radius-md);
+	background: var(--navy);
+	color: var(--white);
+}
+
+.sc-cta__title {
+	font-size: var(--text-card-title);
+	font-weight: var(--w-medium);
+	color: var(--white);
+	margin: 0 0 var(--sp-2);
+}
+
+.sc-cta__text {
+	font-size: var(--text-small);
+	line-height: var(--leading-body);
+	color: var(--white-70);
+	margin: 0 0 var(--sp-5);
+}
+
+.sc-restart {
+	display: block;
+	margin: var(--sp-5) auto 0;
+	padding: 0.25rem 0.5rem;
+	border: none;
+	background: none;
+	font-family: var(--font-sans);
+	font-size: var(--text-small);
+	color: var(--navy-80);
+	cursor: pointer;
+}
+
+.sc-restart:hover {
+	color: var(--navy);
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 34rem) {
+	.sc-card {
+		padding: var(--sp-6) var(--sp-5);
+	}
+
+	.sc-dim-row {
+		grid-template-columns: 1fr auto;
+		gap: var(--sp-2) var(--sp-3);
+	}
+
+	.sc-dim-name {
+		grid-column: 1 / -1;
+	}
+}

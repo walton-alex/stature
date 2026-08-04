@@ -1,0 +1,108 @@
+/*
+ * Core typography: the heading scale, lead, prose and label styles.
+ * Type properties only — spacing stays with the component that uses them.
+ */
+
+a {
+  text-decoration: none;
+  transition:
+    opacity var(--dur-fast) var(--ease-out),
+    color var(--dur-fast) var(--ease-out);
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+.stature-heading {
+  font-weight: var(--w-regular);
+  line-height: var(--leading-heading);
+  letter-spacing: var(--tracking-display);
+  color: var(--navy);
+}
+
+.stature-heading.is-on-navy {
+  color: var(--white);
+}
+
+.stature-heading--display {
+  font-size: var(--text-display);
+  line-height: var(--leading-display);
+}
+
+.stature-heading--h1 {
+  font-size: var(--text-h1);
+}
+
+.stature-heading--h2 {
+  font-size: var(--text-h2);
+}
+
+.stature-heading--h3 {
+  font-size: var(--text-h3);
+}
+
+.stature-heading--h4 {
+  font-size: var(--text-h4);
+}
+
+.stature-lead {
+  font-size: var(--text-lead);
+  font-weight: var(--w-light);
+  line-height: 1.5;
+}
+
+.stature-label {
+  font-family: var(--font-sans);
+  font-size: var(--text-eyebrow);
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+}
+
+.stature-prose > * {
+  margin: 0;
+}
+
+.stature-prose > * + * {
+  margin-top: var(--sp-4);
+}
+
+.stature-prose > h2,
+.stature-prose > h3 {
+  margin-top: var(--sp-7);
+  font-weight: var(--w-regular);
+  line-height: var(--leading-heading);
+  color: var(--navy);
+}
+
+.stature-prose > h2 {
+  font-size: var(--text-h4);
+}
+
+.stature-prose > h3 {
+  font-size: var(--text-card-title);
+}
+
+.stature-prose > :first-child {
+  margin-top: 0;
+}
+
+.stature-prose ul,
+.stature-prose ol {
+  padding-left: 1.25rem;
+}
+
+.stature-prose li + li {
+  margin-top: var(--sp-2);
+}
+
+.stature-prose a {
+  color: var(--navy);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.stature-prose strong {
+  font-weight: var(--w-regular);
+  color: var(--navy);
+}

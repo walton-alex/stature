@@ -132,31 +132,31 @@
       "key": "field_stature_contact_quote",
       "label": "Testimonial quote",
       "name": "quote",
-      "type": "text",
-      "instructions": "Leave empty to omit the testimonial.",
+      "type": "textarea",
+      "instructions": "Leave empty to omit the testimonial. Each line break starts a new paragraph.",
       "required": 0,
       "conditional_logic": 0,
       "wrapper": {
-        "width": "50",
+        "width": "100",
         "class": "",
         "id": ""
       },
       "default_value": "",
       "maxlength": "",
       "placeholder": "",
-      "prepend": "",
-      "append": ""
+      "rows": 3,
+      "new_lines": ""
     },
     {
       "key": "field_stature_contact_attribution",
       "label": "Testimonial attribution",
       "name": "attribution",
       "type": "text",
-      "instructions": "",
+      "instructions": "Plain text, or an inline link — e.g. <a href=\"https://linkedin.com/in/name\" target=\"_blank\" rel=\"noopener\">Elliot</a>, Vero",
       "required": 0,
       "conditional_logic": 0,
       "wrapper": {
-        "width": "50",
+        "width": "100",
         "class": "",
         "id": ""
       },
@@ -185,5 +185,5 @@
   "active": true,
   "description": "Fields for the Contact block.",
   "show_in_rest": 0,
-  "modified": 1783604396
+  "modified": 1785839479
 }

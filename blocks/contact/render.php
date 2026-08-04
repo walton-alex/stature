@@ -38,7 +38,8 @@ $anchor  = ! empty( $block['anchor'] ) ? $block['anchor'] : '';
 				<?php get_template_part( 'parts/eyebrow', null, array( 'text' => $eyebrow ) ); ?>
 
 				<?php if ( '' !== $heading ) : ?>
-					<<?php echo esc_attr( $tag ); ?> class="stature-contact__heading stature-heading stature-heading--h2">
+					<?php // The scale tracks the chosen level, so an h1 page heading reads like one. ?>
+					<<?php echo esc_attr( $tag ); ?> class="stature-contact__heading stature-heading stature-heading--<?php echo esc_attr( $tag ); ?>">
 						<?php echo esc_html( $heading ); ?>
 					</<?php echo esc_attr( $tag ); ?>>
 				<?php endif; ?>

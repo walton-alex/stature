@@ -1,0 +1,45 @@
+{
+  "name": "stature",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Build pipeline for the Stature WordPress theme. Sources live in src/; Parcel minifies them back into the paths WordPress serves (assets/ and each block's style.css), so no PHP or block.json changes are needed.",
+  "scripts": {
+    "watch": "parcel watch",
+    "start": "parcel watch",
+    "build": "rm -rf .parcel-cache && parcel build",
+    "package": "npm run build && mkdir -p dist && ( cd .. && rm -f stature/dist/stature.zip && zip -rqX stature/dist/stature.zip stature -x 'stature/node_modules/*' 'stature/src/*' 'stature/dist/*' 'stature/.git/*' 'stature/.claude/*' 'stature/.parcel-cache/*' 'stature/_design/*' 'stature/package.json' 'stature/package-lock.json' 'stature/.gitignore' 'stature/*.zip' '*/.DS_Store' '*.log' ) && ls -lh dist/stature.zip"
+  },
+  "targets": {
+    "css": {
+      "source": "src/css/*.css",
+      "distDir": "./assets/css",
+      "optimize": true,
+      "sourceMap": false
+    },
+    "js": {
+      "source": [
+        "src/js/header.js",
+        "src/js/questionnaire.js",
+        "src/js/scorecard.js"
+      ],
+      "distDir": "./assets/js",
+      "context": "browser",
+      "outputFormat": "global",
+      "optimize": true,
+      "sourceMap": false
+    },
+    "blocks": {
+      "source": "src/blocks/**/style.css",
+      "distDir": "./blocks",
+      "optimize": true,
+      "sourceMap": false
+    }
+  },
+  "alias": {
+    "@stature/utils": "./src/js/utils.js"
+  },
+  "browserslist": "last 3 years, not dead",
+  "devDependencies": {
+    "parcel": "^2.16.1"
+  }
+}

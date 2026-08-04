@@ -15,6 +15,15 @@ defined( 'ABSPATH' ) || exit;
 const STATURE_SCORECARD_FORM_TITLE = 'Website Credibility Scorecard';
 
 /**
+ * Where the scorecard results send people to book a review call.
+ */
+function stature_scorecard_review_url(): string {
+	$url = function_exists( 'get_field' ) ? (string) get_field( 'scorecard_review_url', 'option' ) : '';
+
+	return '' !== $url ? $url : 'https://cal.com/alex-walton-stature/scorecard-review';
+}
+
+/**
  * Resolve the scorecard Gravity Form ID by title.
  */
 function stature_scorecard_form_id(): int {

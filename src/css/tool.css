@@ -1,0 +1,84 @@
+/*
+ * Shared shell for standalone tool pages (the scorecard and the project
+ * questionnaire): a minimal logo-only header, a slim footer, a cool-grey
+ * surface, and the shared intro "meta" treatment. Keeping these here means both
+ * tools present as one product.
+ */
+
+.stature-tool-page {
+	background: var(--cool-grey);
+}
+
+/* ---- Header ---- */
+.stature-tool-header {
+	display: flex;
+	justify-content: center;
+	padding: var(--sp-6) var(--container-pad-x);
+}
+
+.stature-tool-header__logo {
+	display: inline-flex;
+}
+
+.stature-tool-header__logo img {
+	display: block;
+	height: 1.75rem;
+	width: auto;
+}
+
+/* The logo is not a "link" in the usual sense — no hover fade. */
+.stature-tool-header__logo:hover {
+	opacity: 1;
+}
+
+/* ---- Footer ---- */
+.stature-tool-footer {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	gap: var(--sp-3) var(--sp-6);
+	padding: var(--sp-7) var(--container-pad-x) var(--sp-8);
+	font-size: var(--text-small);
+	color: var(--navy-80);
+}
+
+.stature-tool-footer__policies {
+	display: inline-flex;
+	gap: var(--sp-5);
+}
+
+.stature-tool-footer a {
+	color: var(--navy-80);
+	text-decoration: none;
+}
+
+.stature-tool-footer a:hover {
+	color: var(--navy);
+}
+
+/* ---- Shared intro meta: dot-separated items ---- */
+.stature-tool-meta {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: var(--sp-2) var(--sp-6);
+}
+
+.stature-tool-meta__item {
+	position: relative;
+	padding-left: 1.25rem;
+	font-size: var(--text-small);
+	color: var(--navy-80);
+}
+
+.stature-tool-meta__item::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0.5em;
+	width: 0.5rem;
+	height: 0.5rem;
+	border-radius: 50%;
+	background: var(--cyan);
+}

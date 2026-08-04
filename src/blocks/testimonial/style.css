@@ -1,0 +1,5 @@
+/* Testimonial block. */
+
+.stature-testimonial-block__card {
+	max-width: calc(47.5rem + var(--sp-7) * 2 + var(--border-w) * 2);
+}

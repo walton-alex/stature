@@ -3,3 +3,15 @@ node_modules/
 *.log
 
 _design
+
+# Build tooling
+.parcel-cache/
+
+# Packaged theme zip (npm run package)
+/dist/
+
+# Built theme assets — generated from src/ by `npm run build`. The readable
+# source lives in src/; deploys must run the build.
+/assets/css/
+/assets/js/
+/blocks/*/style.css

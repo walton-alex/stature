@@ -1,0 +1,179 @@
+/* Hero block. */
+
+.stature-hero {
+	position: relative;
+	overflow: hidden;
+	background: var(--white);
+}
+
+.stature-hero__motif {
+	position: absolute;
+	right: -11.25rem;
+	top: -7.5rem;
+	width: 35rem;
+	max-width: none;
+	opacity: 0.35;
+	pointer-events: none;
+}
+
+.stature-hero__inner {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	max-width: var(--container-outer);
+	margin: 0 auto;
+	padding: var(--hero-pad-top) var(--container-pad-x) 0;
+	text-align: center;
+}
+
+.stature-hero__heading {
+	margin: 0;
+	width: 100%;
+}
+
+.stature-hero__lead {
+	margin: var(--sp-6) auto var(--sp-7);
+	max-width: 40rem;
+}
+
+.stature-hero__actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--sp-4);
+	justify-content: center;
+}
+
+/* The featured region. A plain image stays one full-width panel; a case study
+ * splits into the shot plus a column carrying the client's quote. */
+.stature-hero__feature {
+	display: grid;
+	gap: var(--sp-6);
+	width: 100%;
+	max-width: 61.25rem;
+	margin: var(--sp-8) 0 var(--sp-9);
+	text-align: left;
+}
+
+.stature-hero__panel {
+	display: block;
+	position: relative;
+	width: 100%;
+	border-radius: var(--radius-lg);
+	overflow: hidden;
+	box-shadow: var(--shadow-raised);
+	aspect-ratio: 980 / 460;
+}
+
+.stature-hero__feature--case .stature-hero__panel {
+	aspect-ratio: 16 / 10;
+}
+
+/* When it features a case study the panel is a link. Hold the image steady and
+ * let the caption carry the hover — the same idiom as the case study cards. */
+.stature-hero__panel:hover {
+	opacity: 1;
+}
+
+a.stature-hero__panel:hover .stature-hero__caption,
+a.stature-hero__panel:hover .stature-hero__tag {
+	opacity: 0.7;
+}
+
+.stature-hero__image--placeholder {
+	background: var(--grad-navy);
+}
+
+/* Weighted to the foot of the panel: the image stays clear, and only the strip
+ * under the caption is darkened enough to keep it legible. */
+.stature-hero__scrim {
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(
+		180deg,
+		transparent 55%,
+		color-mix(in srgb, var(--navy) 50%, transparent) 100%
+	);
+}
+
+/* A case study panel is tagged in the top corner, so a second wash reaches up
+ * to hold it legible over a light screenshot. */
+a.stature-hero__panel .stature-hero__scrim {
+	background:
+		linear-gradient(
+			180deg,
+			color-mix(in srgb, var(--navy) 45%, transparent) 0%,
+			transparent 30%
+		),
+		linear-gradient(
+			180deg,
+			transparent 55%,
+			color-mix(in srgb, var(--navy) 50%, transparent) 100%
+		);
+}
+
+/* Labels the shot from the top corner, opposite the name. */
+.stature-hero__tag {
+	position: absolute;
+	left: 1.75rem;
+	top: 1.5rem;
+	transition: opacity var(--dur-fast) var(--ease-out);
+}
+
+.stature-hero__tag .stature-eyebrow {
+	margin-bottom: 0;
+}
+
+.stature-hero__caption {
+	position: absolute;
+	left: 1.75rem;
+	bottom: 1.5rem;
+	display: flex;
+	align-items: center;
+	gap: 0.875rem;
+	color: var(--white);
+	transition: opacity var(--dur-fast) var(--ease-out);
+}
+
+.stature-hero__symbol {
+	height: 1.625rem;
+	width: auto;
+}
+
+.stature-hero__caption span {
+	color: var(--white);
+	text-align: left;
+}
+
+.stature-hero__aside {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+/* The card carries its own padding; the hero column only sets the rhythm. */
+.stature-hero__aside .stature-testimonial {
+	width: 100%;
+	padding: var(--sp-6);
+}
+
+/* Matches the card link on the case study grid, so the two read as one idiom.
+ * Hover is the global link fade — no need to restate it. */
+.stature-hero__case-link {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.625rem;
+	margin-top: var(--sp-5);
+	font-size: var(--text-nav);
+	font-weight: var(--w-regular);
+	color: var(--navy);
+}
+
+@media (min-width: 48.875em) {
+	/* The shot leads; the quote card sits beside it. */
+	.stature-hero__feature--case {
+		grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+		gap: var(--sp-7);
+		align-items: center;
+	}
+}

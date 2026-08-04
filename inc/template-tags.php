@@ -42,6 +42,42 @@ function stature_asset( string $path ): string {
 	return get_theme_file_uri( 'assets/' . ltrim( $path, '/' ) );
 }
 
+/**
+ * Sanitise a testimonial attribution. Editors write plain text, or an inline
+ * link to the person's profile; everything else is stripped.
+ *
+ * @param string $attribution Raw field value.
+ */
+function stature_attribution_html( string $attribution ): string {
+	return wp_kses(
+		$attribution,
+		array(
+			'a'      => array(
+				'href'   => array(),
+				'target' => array(),
+				'rel'    => array(),
+				'title'  => array(),
+			),
+			'em'     => array(),
+			'strong' => array(),
+		)
+	);
+}
+
+/**
+ * Split a quote into paragraphs. Each line break the editor typed starts a new
+ * one; blank lines collapse.
+ *
+ * @param string $quote Raw field value.
+ *
+ * @return string[]
+ */
+function stature_quote_paragraphs( string $quote ): array {
+	$paragraphs = preg_split( '/\R+/', trim( $quote ) );
+
+	return array_values( array_filter( array_map( 'trim', (array) $paragraphs ), 'strlen' ) );
+}
+
 function stature_menu_title( string $location, string $default ): string {
 	$locations = get_nav_menu_locations();
 

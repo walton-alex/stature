@@ -1,0 +1,50 @@
+/* FAQ accordion block. */
+
+.stature-faq__list {
+	max-width: 47.5rem;
+	border-top: var(--border-w) solid var(--navy-12);
+}
+
+.stature-faq__item {
+	border-bottom: var(--border-w) solid var(--navy-12);
+}
+
+.stature-faq__question {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: var(--sp-5);
+	padding: 1.375rem 0;
+	font-size: 1.125rem;
+	font-weight: var(--w-regular);
+	line-height: normal;
+	color: var(--navy);
+	cursor: pointer;
+	list-style: none;
+	user-select: none;
+}
+
+.stature-faq__question::-webkit-details-marker {
+	display: none;
+}
+
+.stature-faq__icon {
+	flex-shrink: 0;
+	color: var(--navy);
+	transition: transform var(--dur-med) var(--ease-out);
+}
+
+.stature-faq__item[open] .stature-faq__icon {
+	transform: rotate(45deg);
+}
+
+.stature-faq__answer {
+	margin: 0 0 1.375rem;
+	max-width: 40rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.stature-faq__icon {
+		transition: none;
+	}
+}
