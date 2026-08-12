@@ -75,9 +75,6 @@ $stature_footer_columns = array(
 			<a href="<?php echo esc_url( stature_url( 'privacy-policy' ) ); ?>">
 				<?php esc_html_e( 'Privacy Policy', 'stature' ); ?>
 			</a>
-			<a href="<?php echo esc_url( stature_url( 'cookie-policy' ) ); ?>">
-				<?php esc_html_e( 'Cookie Policy', 'stature' ); ?>
-			</a>
 		</span>
 	</div>
 </footer>

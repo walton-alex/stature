@@ -48,6 +48,19 @@ function stature_setup(): void {
 			'assets/css/base.css',
 		)
 	);
+
+	// Serve the requested size only — no srcset or sizes on any attachment image.
+	add_filter( 'wp_calculate_image_srcset_meta', '__return_empty_array' );
+
+	add_filter(
+		'wp_get_attachment_image_attributes',
+		function ( $attr ) {
+			unset( $attr['srcset'], $attr['sizes'] );
+
+			return $attr;
+		},
+		20
+	);
 }
 add_action( 'after_setup_theme', 'stature_setup' );
 
